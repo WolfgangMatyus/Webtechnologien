@@ -1,0 +1,165 @@
+
+<link href="css/mystyle.css" rel="stylesheet">
+<div class="row">
+<div class="container">
+    <form class="signup-form">
+        <div class="form-header">
+            <h1>Create Account</h1>
+        </div>
+        <div class="form-body">
+
+            <div class="row">
+                <div class="input-group">
+                    <label>First Name</label>
+                    <input type="text" />
+                </div>
+                    
+                <div class="input-group">
+                    <label>Last Name</label>
+                    <input type="text" />
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" />
+                </div>
+                    
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <input type="password" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <div>
+                            <label>
+                                <input type="radio" name="gender" />
+                                Female
+                            </label>
+                        </div>
+
+                        <div>
+                            <label>
+                                <input type="radio" name="gender"/>
+                                Male
+                            </label>
+                        </div>
+
+                        <div>
+                            <label>
+                                <input type="radio" name="gender"/>
+                                Other
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="input-group">
+                    <label>Preferences</label>
+                    <div class="checkbox-groups">
+                        <div class="checkbox-group">
+                            <div>
+                                <label>
+                                    <input type="checkbox" />
+                                    Balcony
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox" />
+                                    Shower
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox" />
+                                    Bath
+                                </label>
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <div>
+                                <label>
+                                    <input type="checkbox" />
+                                    Silent
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox" />
+                                    Montainview
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="checkbox" />
+                                    Xtra large Bed
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Source of Income</label>
+                    <select>
+                        <option>Employed</option>
+                        <option>Self-Employed</option>
+                        <option>Unemployed</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Income</label>
+                    <div class="range-group">
+                        <input type="range" min="20" max="200" step="5" onchange="changeSliderValue(this.value)" />
+                        <label id="income-label">30 K</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Upload Profile Picture</label>
+                    <input type="file" />
+                </div>
+                <div class="input-group">
+                    <label>Age</label>
+                    <input type="number" min="0" />
+                </div>
+           </div>
+
+           <div class="row">
+                <div class="input-group">
+                    <label>Comment</label>
+                    <textarea></textarea>
+                </div>
+           </div>
+        </div>
+
+        <div class="form-footer">
+            <button class="btn">
+                Create
+            </button>
+        </div>
+    </form>
+</div>
+</div>
+    <script>
+        const changeSliderValue = (value) => {
+            document.getElemntById("income-label").innerText = value + " K";
+        }
+    </script>
