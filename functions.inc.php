@@ -1,4 +1,3 @@
-<!--https://www.youtube.com/watch?v=gCo6JqGMi30 MIN 58-->
 <?php //php only ohne closing tag ? >
 
 function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
