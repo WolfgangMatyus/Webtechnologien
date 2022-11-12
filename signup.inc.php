@@ -17,22 +17,22 @@ if(isset($_POST["submit"])){
         exit();
     }
 
-    if (invalidUid($username) !== false) {
+    else if (invalidUid($username) !== false) {
         header("location: ../signup.php?error=invaliduid");
         exit();
     }
 
-    if (invalidEmail($email) !== false) {
+    else if (invalidEmail($email) !== false) {
         header("location: ../signup.php?error=invalidemail");
         exit();
     }
 
-    if (pwdMatch($pwd, $pwdRepeat) !== false) {
+    else if (pwdMatch($pwd, $pwdRepeat) !== false) {
         header("location: ../signup.php?error=invalidpwdmatch");
         exit();
     }
 
-    if (uidExists($conn, $username, $email) !== false) {
+    else if (uidExists($conn, $username, $email) !== false) {
         header("location: ../signup.php?error=usernametaken");
         exit();
     }
