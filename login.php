@@ -9,33 +9,55 @@
         </div>
     </div>
 </div>
-<div class = "wrapper" form action="included//login.inc.php" method="post">
-    <div class="container d-flex justify-content-center" style="padding: 20px;">
+
+<div class="container d-flex justify-content-center" style="padding: 20px;">
     <div class="card border-primary " style="max-width: 30rem;">
         <div class="card-header bg-transparent border-primary">Header</div>
-        <div class="card-body text-success">
-    <h5 class="card-title">Success card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <form>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <div class="card-body text-success">
+                <h5 class="card-title">Success card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                
+                <form action="/included/login.inc.php" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="uid">
+                        
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="pwd">
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember Login</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+
+                </form> 
+            </div>
+            
+            <div class="card-footer bg-transparent border-primary">
+                
+            <?php
+                if(isset($_GET["error"])){
+                    if($_GET["error"]== "emptyinput"){
+                        echo "Fill in all fields!";
+                        }
+                    else if($_GET["error"]== "wronglogin"){
+                        echo "Incorrect Credentials!";
+                    }
+                else echo "Thank You! We wish you a nice stay!";
+                }     
+            ?>
+
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Remember Login</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>  
-</div>
-  <div class="card-footer bg-transparent border-primary">Thank You! We wish you a nice stay!</div>
-</div>
-</div>
+    </div>
 </div>
 
 <?php

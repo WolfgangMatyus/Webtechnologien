@@ -3,9 +3,9 @@
 if(isset($_POST["submit"])){
 //    echo "It works";
 
+    $username = $_POST["uid"];
     $name = $_POST["name"];
     $email = $_POST["email"];
-    $username = $_POST["uid"];
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
 
