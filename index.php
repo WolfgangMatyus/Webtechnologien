@@ -2,11 +2,7 @@
     include_once 'header.php';
 ?>
 
-    <?php
-        if(isset($_SESSION["useruid"])) {
-            echo "<p>Welcome " . $_SESSION["useruid"] . "</p>";
-        }
-    ?>
+    
     <div class="container-fluid d-flex justify-content-center" style="margin: 20px; padding: 20px 20px 20px 20px; background-image: url(pics/fh_technikum_kv.jpg); background-position: center; background-repeat: no-repeat;">      
         <div class="jumbotron">
                 <h1 class="display-4">Welcome to our WebHotel!</h1>
