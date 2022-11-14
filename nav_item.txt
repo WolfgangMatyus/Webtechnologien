@@ -1,13 +1,7 @@
 <li class="nav-item">
   <a href="login.php" class="nav-link
     <?php
-      if(basename($_SERVER['PHP_SELF'])=="login.php"){
-       echo 'active';
-      }
-      else{
-        echo '';
-      }
-    ?>">Log in!
+      if(basename($_SERVER['PHP_SELF'])=="login.php"){echo 'active';}else{echo '';}?>">Log in!
   </a>
 </li>
 
@@ -22,4 +16,3 @@
                   }
               ?>">Sign up!</a>
           </li>
-                  

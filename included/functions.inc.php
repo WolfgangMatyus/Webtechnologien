@@ -1,8 +1,10 @@
 <?php //php only ohne closing tag ? >
 
-function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
+use LDAP\Result;
 
-        if(empty($name) || empty($email) || empty($username)|| empty($pwd)|| empty($pwdRepeat)){
+function emptyInputSignup($gender, $name, $email, $username, $pwd, $pwdRepeat) {
+
+        if(empty($gender) || empty($name) || empty($email) || empty($username)|| empty($pwd)|| empty($pwdRepeat)){
             $result = true;
         }
         else {
@@ -68,8 +70,8 @@ function uidExists($conn, $username, $email){
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $name, $email, $username, $pwd){
-    $sql ="INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
+function createUser($conn, $gender, $name, $email, $username, $pwd){
+    $sql ="INSERT INTO users (usersGender, usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../signup.php?error=stmt2failed");
@@ -78,7 +80,7 @@ function createUser($conn, $name, $email, $username, $pwd){
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "sssss", $gender, $name, $email, $username, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
         header("location: ../signup.php?error=none");

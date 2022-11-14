@@ -11,6 +11,39 @@
 </div>
 
 
+    <?php
+        if((isset($_GET["error"]) && $_GET["error"]=="none")){
+            echo '<div class="container d-flex justify-content-center text-success fw-bold h3">
+                    Successfully signed up!
+                    <br>
+                    Enjoy your stay! :)
+                    </div>';
+            exit;
+        }
+        elseif(isset($_GET["error"]) && $_GET["error"]!="none"){
+            echo '<div class="container d-flex justify-content-center text-danger fw-bold h3">';
+            if($_GET["error"]== "emptyinput"){
+                echo "Fill in all fields!";
+            }
+            if($_GET["error"]== "invaliduid"){
+                echo "Choose a proper Username!";
+            }
+            if($_GET["error"]== "invalidemail"){
+                echo "Choose a proper Email!";
+            }
+            if($_GET["error"]== "invalidpwdmatch"){
+                echo "Passwords do not match!";
+            }
+            if($_GET["error"]== "usernametaken"){
+                echo "Username is already taken!";
+            }
+            if($_GET["error"]== "stmtfailed"){
+                echo "Something went wrong, try again!";
+            }
+        } 
+        echo '</div>';
+    ?>
+
 <div class="container d-flex justify-content-center" style="padding: 20px;">
     <div class="card border-primary " style="max-width: 60rem;" >
         <div class="card-header bg-transparent border-success">
@@ -53,7 +86,7 @@
                     <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     
                     <div id="emailHelp" class="form-text">
-                        We'll never share your email with anyone else.
+                        We\'ll never share your email with anyone else.
                     </div>
                 </div>
 
@@ -74,30 +107,7 @@
 
         <div class="card-footer bg-transparent border-success">
 
-        <?php
-            if(isset($_GET["error"])){
-                if($_GET["error"]== "emptyinput"){
-                    echo "Fill in all fields!";
-                }
-                if($_GET["error"]== "invaliduid"){
-                    echo "Choose a proper Username!";
-                }
-                if($_GET["error"]== "invalidemail"){
-                    echo "Choose a proper Email!";
-                }
-                if($_GET["error"]== "invalidpwdmatch"){
-                    echo "Passwords do not match!";
-                }
-                if($_GET["error"]== "usernametaken"){
-                    echo "Username is already taken!";
-                }
-                if($_GET["error"]== "stmtfailed"){
-                    echo "Something went wrong, try again!";
-                }
-            }
-            elseif(isset($_POST["submit"])) echo "You have signed up!";
-            else echo "Thank You! We wish you a nice stay!"; 
-        ?>
+            Thank You! We wish you a nice stay!
             
         </div>
     </div>

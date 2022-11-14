@@ -8,11 +8,12 @@ if(isset($_POST["submit"])){
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
+    $gender = $_POST["inlineRadioOptions"];
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
+    if (emptyInputSignup($gender, $name, $email, $username, $pwd, $pwdRepeat) !== false) {
         header("location: ../signup.php?error=emptyinput");
         exit();
     }
@@ -44,7 +45,7 @@ if(isset($_POST["submit"])){
     }
     */
 
-    createUser($conn, $name, $email, $username, $pwd);
+    createUser($conn, $gender, $name, $email, $username, $pwd);
 
 }
 else{

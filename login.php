@@ -10,6 +10,21 @@
     </div>
 </div>
 
+
+    <?php
+        if(isset($_GET["error"])){
+            echo '<div class="container d-flex justify-content-center text-danger fw-bold h3">';
+            if($_GET["error"]== "emptyinput"){
+                echo "Fill in all fields!";
+                }
+            else if($_GET["error"]== "wronglogin"){
+                echo "Incorrect Credentials!";
+            }
+        }
+        echo '</div>';
+    ?>
+
+
 <div class="container d-flex justify-content-center" style="padding: 20px;">
     <div class="card border-primary " style="max-width: 30rem;">
         <div class="card-header bg-transparent border-primary">Header</div>
@@ -42,19 +57,7 @@
             </div>
             
             <div class="card-footer bg-transparent border-primary">
-                
-            <?php
-                if(isset($_GET["error"])){
-                    if($_GET["error"]== "emptyinput"){
-                        echo "Fill in all fields!";
-                        }
-                    else if($_GET["error"]== "wronglogin"){
-                        echo "Incorrect Credentials!";
-                    }
-                else echo "Thank You! We wish you a nice stay!";
-                }     
-            ?>
-
+                Thank You! We wish you a nice stay!;
             </div>
         </div>
     </div>
