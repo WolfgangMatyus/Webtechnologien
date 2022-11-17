@@ -11,16 +11,8 @@
 </div>
 
 
-    <?php
-        if((isset($_GET["error"]) && $_GET["error"]=="none")){
-            echo '<div class="container d-flex justify-content-center text-success fw-bold h3">
-                    Successfully signed up!
-                    <br>
-                    Enjoy your stay! :)
-                    </div>';
-            exit;
-        }
-        elseif(isset($_GET["error"]) && $_GET["error"]!="none"){
+    <?php 
+        if(isset($_GET["error"]) && $_GET["error"]!="none"){
             echo '<div class="container d-flex justify-content-center text-danger fw-bold h3">';
             if($_GET["error"]== "emptyinput"){
                 echo "Fill in all fields!";
@@ -57,17 +49,17 @@
                 <p class="card-text">* Mandatory</p>
 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
                     <label class="form-check-label" for="inlineRadio1">Male*</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female">
                     <label class="form-check-label" for="inlineRadio2">Female*</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Other">
                     <label class="form-check-label" for="inlineRadio2">Other*</label>
                 </div>
 

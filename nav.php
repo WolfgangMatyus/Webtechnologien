@@ -31,27 +31,26 @@
           
           <?php
             if(isset($_SESSION["useruid"])) {
-              echo'<li class="nav-item">
+              echo'
+              <li class="nav-item">
+                <a href="profile.php" class="nav-link">Your Profile</a>
+              </li>
+              <li class="nav-item">
+                <a href="reservation.php" class="nav-link">Set Reservation!</a>
+              </li>
+              <li class="nav-item">
                 <a href="/included/logout.inc.php" class="nav-link">Log out!</a>
-              </li>';
+              </li>'
+              ;
             }
             else{
-              echo '<li class="nav-item">
-                      <a href="login.php" class="nav-link">Log in!</a>
-                    </li>';
-            }
-          ?>
-
-          <?php
-            if(isset($_SESSION["useruid"])) {
-              echo'<li class="nav-item">
-                <a href="profile.php" class="nav-link">Profile</a>
+              echo'
+              <li class="nav-item">
+                <a href="login.php" class="nav-link">Log in!</a>
+              </li>
+              <li class="nav-item">
+                <a href="signup.php" class="nav-link">Sign up!</a>
               </li>';
-            }
-            else{
-              echo '<li class="nav-item">
-                      <a href="signup.php" class="nav-link">Sign up!</a>
-                    </li>';
             }
           ?>
         

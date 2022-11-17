@@ -13,6 +13,26 @@ function emptyInputSignup($gender, $name, $email, $username, $pwd, $pwdRepeat) {
     return $result;
 }
 
+function emptyInputReservation($arrival, $departure, $breakfast, $parking){
+        if(empty($arrival) || empty($departure) || empty($breakfast) || empty($parking)){
+            $result = true;
+        }
+        else {
+            $result = false;
+        }
+    return $result;
+}
+
+function emptyInputPwChange($username, $currentpwd, $newpwd, $confirmpwd){
+    if(empty($username) || empty($currentpwd) || empty($newpwd) || empty($confirmpwd)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+return $result;
+}
+
 function invalidUid($username){
 
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
@@ -83,9 +103,104 @@ function createUser($conn, $gender, $name, $email, $username, $pwd){
     mysqli_stmt_bind_param($stmt, "sssss", $gender, $name, $email, $username, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-        header("location: ../signup.php?error=none");
+        header("location: ../login.php?error=none");
         exit();
     exit();
+}
+
+function createReservation($conn, $arrival, $departure, $breakfast, $parking, $pet){
+    $sql ="INSERT INTO reservations (reservationsArrival, reservationsDeparture, reservationsBreakfast, reservationsParking, reservationsPet, reservationsStatus) VALUES (?, ?, ?, ?, ?, 'new');";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../reservation.php?error=stmt2failed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "sssss", $arrival, $departure, $breakfast, $parking, $pet);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+        header("location: ../reservation.php?error=none");
+        exit();
+    exit();
+}
+
+function updateUser($conn, $gender, $name, $email, $username, $userid){
+    $sql ="UPDATE users SET usersGender = ?, usersName = ?, usersEmail = ?, usersUid = ? WHERE usersId = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../profile.php?error=stmt2failed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "sssss", $gender, $name, $email, $username, $userid);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    $_SESSION["usergender"] = $gender;
+    $_SESSION["useruid"] = $username;
+    $_SESSION["useremail"] = $email;
+    $_SESSION["username"] = $name;
+        header("location: ../profile.php?error=none1");
+        exit();
+    exit();
+}
+
+function changePW($conn, $username, $currentpwd, $newpwd, $confirmpwd){
+    $uidExists = uidExists($conn, $username, $username);
+    
+    $sql ="SELECT usersPwd FROM users WHERE usersUid = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../changepw.php?error=stmt2failed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    
+    $pwdHashed = $uidExists["usersPwd"];
+    $checkPwd = password_verify($currentpwd, $pwdHashed);
+
+    if($checkPwd === false){
+        header("location: ../changepw.php?error=wrongcurrentpwd");
+        exit();
+    }
+    if(strcmp($newpwd, $confirmpwd) != 0){
+        header("location: ../changepw.php?error=nomatchnewpwd");
+        exit();
+    }
+
+    $newHashedPwd = password_hash($newpwd, PASSWORD_DEFAULT);
+
+    $sql ="UPDATE users SET usersPwd = ? WHERE usersuid = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../changepw.php?error=stmt2failed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ss", $newHashedPwd, $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../changepw.php?error=none");
+    exit();
+}
+
+function getUser($conn, $username){
+    $uidExists = uidExists($conn, $username, $username);
+
+    $sql ="SELECT * FROM users WHERE usersUid = ?;";
+    $stmt = mysqli_stmt_init($conn);
+
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+    }
+    else {
+        $result = false;
+        return $result;
+    }
 }
 
 function emptyInputLogin($username, $pwd) {
@@ -118,7 +233,46 @@ function loginUser($conn, $username, $pwd){
         session_start();
         $_SESSION["userid"] = $uidExists["usersId"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
+        $_SESSION["useremail"] = $uidExists["usersEmail"];
+        $_SESSION["username"] = $uidExists["usersName"];
+        $_SESSION["usergender"] = $uidExists["usersGender"];
+        
         header("location: ../index.php");
         exit();
     }
 }
+
+function falseDate($arrival, $departure){
+        if($arrival < $departure){
+            $result = false;
+        }
+        else{
+            $result = true;
+        }
+    return $result;
+}
+
+// diese Funktion ist noch unvollständig, Ausgabe von DB-Liste mit For-Schleife
+/*function getReservations($conn, $username){
+    $uidExists = uidExists($conn, $username, $username);
+    $sql ="SELECT * FROM reservations WHERE reservationsUid = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../changepw.php?error=stmt2failed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+    }
+    else {
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+}*/

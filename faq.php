@@ -28,7 +28,7 @@
       </button>
     </h2>
     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Gehen Sie hierfür auf die Seite "Zimmer reservieren" und geben Sie dort die Anzahl der Gäste sowie das An- und Abreisedatum an.</div>
+      <div class="accordion-body">Navigieren Sie hierfür auf die Seite "Zimmer reservieren" und geben Sie dort die Anzahl der Gäste sowie das An- und Abreisedatum an.</div>
     </div>
   </div>
   <div class="accordion-item">
@@ -38,7 +38,7 @@
       </button>
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Ja. Gehen Sie hierfür auf die Seite Profil. Dort können Sie ihre Daten, sowie ihr Passwort ändern.</div>
+      <div class="accordion-body">Ja. Navigieren Sie hierfür auf die Seite Profil. Dort können Sie ihre Daten, sowie ihr Passwort ändern.</div>
     </div>
   </div>
   <div class="accordion-item">

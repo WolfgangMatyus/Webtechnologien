@@ -15,6 +15,12 @@ if(isset($_POST["submit"])){
 
     loginUser($conn, $username, $pwd);
 }
+
+if(isset($_POST["changePw"])){
+    header("location: ../changepw.php");
+    exit();
+    
+}
 else{
     header("location: ../login.php?error=wronglogin");
     exit();
