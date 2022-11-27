@@ -123,10 +123,13 @@
                         <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     </div>
 
-                    
+                    <div>
                         <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
-                   
+                    </div>
                 </form>
+                <form action="../changepw.php" method="POST">
+                    <button type="submit"class="btn btn-primary" name="changePw">Change Password</button>
+                </form>   
             </div>
         </div>
     </div>

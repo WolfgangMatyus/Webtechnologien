@@ -1,6 +1,6 @@
 <?php //php only ohne closing tag ? >
 
-use LDAP\Result;
+//use LDAP\Result;
 
 function emptyInputSignup($gender, $name, $email, $username, $pwd, $pwdRepeat) {
 

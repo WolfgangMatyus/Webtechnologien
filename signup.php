@@ -78,7 +78,7 @@
                     <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     
                     <div id="emailHelp" class="form-text">
-                        We\'ll never share your email with anyone else.
+                        We'll never share your email with anyone else.
                     </div>
                 </div>
 

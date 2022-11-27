@@ -3,12 +3,12 @@
 if(isset($_POST["submit"])){
 //    echo "It works";
 
-    $username = $_POST["uid"];
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $pwd = $_POST["pwd"];
-    $pwdRepeat = $_POST["pwdrepeat"];
-    $gender = $_POST["inlineRadioOptions"];
+    $username = htmlspecialchars($_POST["uid"]);
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $pwd = htmlspecialchars($_POST["pwd"]);
+    $pwdRepeat = htmlspecialchars($_POST["pwdrepeat"]);
+    $gender = htmlspecialchars($_POST["inlineRadioOptions"]);
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
