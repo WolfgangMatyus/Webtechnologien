@@ -15,7 +15,7 @@
 
         if((isset($_GET["error"]) && $_GET["error"]=="none")){
             echo '<div class="container d-flex justify-content-center text-success fw-bold h3">
-                    Successfully signed up!
+                    Password changed successfully!
                     <br>
                     Enjoy your stay! :)
                     </div>';
@@ -26,8 +26,8 @@
             if($_GET["error"]== "emptyinput"){
                 echo "Fill in all fields!";
                 }
-            else if($_GET["error"]== "wronglogin"){
-                echo "Incorrect Credentials!";
+            else if($_GET["error"]== "nomatchpwd"){
+                echo "New passwords don't match!";
             }
         }
         echo '</div>';
@@ -36,35 +36,34 @@
 
 <div class="container d-flex justify-content-center" style="padding: 20px;">
     <div class="card border-primary " style="max-width: 30rem;">
-        <div class="card-header bg-transparent border-primary"><h2>Log In!</h2></div>
+        <div class="card-header bg-transparent border-primary"><h2>Password Change</h2></div>
             <div class="card-body text-success">
-                <h5 class="card-title">Log In to your Personal Profile!</h5>
-                <p class="card-text">Please enter your credentials to log in!</p>
+                <h5 class="card-title">Change your password</h5>
+                <p class="card-text">Please enter your current password and set up a new one, than confirm it!</p>
                 
-                <form action="/included/login.inc.php" method="POST">
+                <form action="/included/changepw.inc.php" method="POST">
+                 
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="uid">
-                        
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                        </div>
+                        <label for="Username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="Username" name="username" placeholder="Username">
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="pwd">
+                        <label for="currentPW" class="form-label">Current Password</label>
+                        <input type="password" class="form-control" id="currentPW" name="currentpwd" placeholder="Current Password">
                     </div>
 
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember Login</label>
+                    <div class="mb-3">
+                        <label for="newPw" class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="newPw" name="newpwd" placeholder="New Password">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="confirmPw" class="form-label">Confirm New Password</label>
+                        <input type="password" class="form-control" id="confirmPw" name="confirmpwd" placeholder="Confirm New Password">
                     </div>
 
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                    
-                    <div>
-                        <button type="submit"class="btn btn-primary" name="changePw">Change Password</button>
-                    </div>
                 </form> 
             </div>
             
