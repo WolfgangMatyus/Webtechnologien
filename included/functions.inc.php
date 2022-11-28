@@ -282,7 +282,6 @@ function getComments($conn){
     exit();
 }
 
-// diese Funktion ist noch unvollständig, Ausgabe von DB-Liste mit For-Schleife
 function getReservations($conn, $username){
     $uidExists = uidExists($conn, $username, $username);
     $sql ="SELECT * FROM reservations WHERE reservationsUid = ?;";
@@ -295,22 +294,52 @@ function getReservations($conn, $username){
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);
-    
+    echo '<div class="container d-flex justify-content-center">';
     if ($resultData->num_rows > 0) {
+        echo '<div><table >
+        <tr class="resTable">
+            <th>User ID</th>
+            <th>Arrival</th>
+            <th>Departure</th>
+            <th>Breakfast</th>
+            <th>Parking Lot</th>
+            <th>Pet</th>
+            <th>Reservation Status</th>
+            <th>Cancel Reservation?</th>
+            <th>Confirm Reservation!</th>';
         // output data of each row
         while($row = $resultData->fetch_assoc()) {
+            $reservervationId = $row["reservationsId"];
           echo "
          
-          </div>
-          
-          id: " . $row["reservationsUid"]. " - Arrival: " . $row["reservationsArrival"]. " Departure: " . $row["reservationsDeparture"]. "<br>";
+            <tr class='resTable'>
+                <td>".$row["reservationsUid"]."</td>
+                <td>" . $row["reservationsArrival"]."</td>
+                <td>" . $row["reservationsDeparture"]."</td>
+                <td>" . $row["reservationsBreakfast"]."</td>
+                <td>" . $row["reservationsParking"]."</td>
+                <td>". $row["reservationsPet"]."</td>
+                <td>" . $row["reservationsStatus"]."</td>
+                <td>
+                    <form action='/included/reservation.inc.php' method='POST'>
+                        <button type='submit' name='cancelRes' value='$reservervationId'>Yes, please!</button>
+                    </form>  
+                </td>
+                <td>
+                    <form action='/included/reservation.inc.php' method='POST'>
+                        <button type='submit' name='confirmRes' value='$reservervationId'>Yes, please!</button>
+                    </form>  
+                </td>
+            </tr>"
+        ;
         }
+        echo "</table></div>";
       } else {
         echo "0 results";
       }
+      echo '</div>';
     
-    
-    echo mysqli_fetch_assoc($resultData);
+   
     /*if($row = ){
         return $row;
     }
@@ -320,4 +349,36 @@ function getReservations($conn, $username){
     }*/
 
     mysqli_stmt_close($stmt);
+}
+
+function cancelRes($conn, $reservervationId){
+    $sql ="UPDATE reservations SET reservationsStatus = ? WHERE reservationsId = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../profile.php?error=stmt2failed");
+        exit();
+    }
+    $cancel = 'canceled';
+    mysqli_stmt_bind_param($stmt, "si", $cancel, $reservervationId);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../profile.php?error=non");
+    exit();
+    
+}
+
+function confirmRes($conn, $reservervationId){
+    $sql ="UPDATE reservations SET reservationsStatus = ? WHERE reservationsId = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../profile.php?error=stmt2failed");
+        exit();
+    }
+    $cancel = 'confirmed';
+    mysqli_stmt_bind_param($stmt, "si", $cancel, $reservervationId);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../profile.php?error=nono");
+    exit();
+    
 }

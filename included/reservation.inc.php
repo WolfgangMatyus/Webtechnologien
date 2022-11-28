@@ -25,6 +25,18 @@ if(isset($_POST["submit"])){
 
     createReservation($conn, $userUid, $arrival, $departure, $breakfast, $parking, $pet);
 }
+elseif(isset($_POST["cancelRes"])){
+    require_once 'functions.inc.php';
+    require_once 'dbh.inc.php';
+    cancelRes($conn, $_POST["cancelRes"]);
+
+}
+elseif(isset($_POST["confirmRes"])){
+    require_once 'functions.inc.php';
+    require_once 'dbh.inc.php';
+    confirmRes($conn, $_POST["confirmRes"]);
+
+}
 else{
     header("location: ../reservation.php");
 }

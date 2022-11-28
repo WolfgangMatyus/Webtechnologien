@@ -88,7 +88,7 @@ echo '
                 </table>';
                 ?>
                 <?php
-                if(!isset($_GET["error"])){
+                if(!(isset($_GET["error"])&& $_GET["error"]=="none")){
                     echo '
                     <form action="/included/change.inc.php" method="POST">
                     <button type="submit" class="btn btn-primary" name="change">Change Data</button>
