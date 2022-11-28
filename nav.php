@@ -39,9 +39,11 @@
                 <a href="reservation.php" class="nav-link">Set Reservation!</a>
               </li>
               <li class="nav-item">
+                <a href="guestbook.php" class="nav-link">Guestbook!</a>
+              </li>
+              <li class="nav-item">
                 <a href="/included/logout.inc.php" class="nav-link">Log out!</a>
-              </li>'
-              ;
+              </li>';
             }
             else{
               echo'

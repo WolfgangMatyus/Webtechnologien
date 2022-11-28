@@ -137,3 +137,6 @@
 }
 else echo 'Please log in for possible profile changes';
 ?>
+<?php
+    include_once 'footer.php';
+?>

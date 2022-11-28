@@ -1,17 +1,34 @@
 <?php //php only ohne closing tag ? >
 
-if(isset($_POST["submit"])){
+require_once 'dbh.inc.php';
+require_once 'functions.inc.php';
 
+if(isset($_POST["submit"])){
+    session_start();
+    $username = $_SESSION["username"];
+    //$userpic = $_SESSION["userpic"];
     $comment = htmlspecialchars($_POST["comment"]);
-    $pwd = htmlspecialchars($_POST["pwd"]);
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    if(emptyInputLogin($username, $pwd) !== false){
-        header("location: ../login.php?error=emptyinput");
+    if(emptyInputLogin($username, $comment) !== false){
+        header("location: ../guestbook.php?error=emptyinput");
         exit();
     }
 
-    loginUser($conn, $username, $pwd);
+    setComment($conn, $username, $comment);
 }
+
+$sql = "SELECT *  FROM comments ORDER BY comments_id desc";
+$res = mysqli_query($conn, $sql);
+echo '<table>';
+for($i=0; $i<3; $i++)
+{
+$dsatz=mysqli_fetch_assoc($res);
+$username = $dsatz["comments_uid"];
+$comment = $dsatz["comments_comment"];
+echo '
+<tr><td> User: '.$username.'<hr> Comment: <br>'.$comment.'<hr><br></td>';
+};
+echo '</table>';                    

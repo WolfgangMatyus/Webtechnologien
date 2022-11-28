@@ -29,7 +29,10 @@
             if($_GET["error"]== "usernametaken"){
                 echo "Username is already taken!";
             }
-            if($_GET["error"]== "stmtfailed"){
+            if($_GET["error"]== "stmt1failed"){
+                echo "Something went wrong, try again!";
+            }
+            if($_GET["error"]== "stmt2failed"){
                 echo "Something went wrong, try again!";
             }
         } 
