@@ -19,7 +19,7 @@
         <div class="card-header bg-transparent border-primary">
             <h4>Upload your profile photo</h4>
         </div>                
-        <div class="card-body"
+        <div class="card-body">
             <form action="included/upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload:
                 <input type="file" name="myfile" id="fileToUpload">
