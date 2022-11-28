@@ -1,0 +1,59 @@
+/* .=class, #=id,  'name'=tag :=effect*/
+body {
+    background-color: rgb(0, 183, 255);
+}
+
+.jumbotron{
+    color: azure;
+    background-color:hsla(200, 100%, 80%, 0.603);
+}
+
+nav{
+    background-color:hsl(244, 89%, 51%);
+}
+
+.jumbotron:hover{
+    color: azure;   
+    padding: 20px 20px;
+    background-color:hsl(244, 89%, 51%);
+}
+
+#navbarSupportedContent{
+    text-align: center;
+    flex-grow: 0.5;
+    color: azure;   
+    padding: 10px 10px;
+}
+
+.navbar:hover{
+    padding: 10px 10px;
+}
+
+a.nav-link{
+    font-family: Arial, Helvetica, sans-serif;
+    color: azure;
+    margin: 0px 20px 0px 20px;
+}
+.nav-item:hover{
+    background-color:hsl(202, 71%, 48%);
+    text-size-adjust: 500px;
+}
+
+.navbar {
+    color: azure;
+    background-color:hsl(244, 89%, 51%);
+}
+
+.container{
+    padding: 20px;
+    max-width: 60rem;
+}
+
+.footer-item{
+    padding: 0px 10px;
+
+}
+
+.impressum{
+    color: azure;
+}

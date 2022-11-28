@@ -3,11 +3,11 @@
 if(isset($_POST["submit"])){
 //    echo "It works";
 
-    $arrival = $_POST["arrival"];
-    $departure = $_POST["departure"];
-    $breakfast = $_POST["breakfast"];
-    $parking = $_POST["parking"];
-    $pet = $_POST["pet"];
+    $arrival = htmlspecialchars($_POST["arrival"]);
+    $departure = htmlspecialchars($_POST["departure"]);
+    $breakfast = htmlspecialchars($_POST["breakfast"]);
+    $parking = htmlspecialchars($_POST["parking"]);
+    $pet = htmlspecialchars($_POST["pet"]);
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';

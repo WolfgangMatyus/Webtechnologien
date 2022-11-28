@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e3f2fd; padding: 10px 10px">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <a class="navbar-brand col-md-2" href="index.php">
 
       <?php
@@ -39,9 +39,11 @@
                 <a href="reservation.php" class="nav-link">Set Reservation!</a>
               </li>
               <li class="nav-item">
+                <a href="guestbook.php" class="nav-link">Guestbook!</a>
+              </li>
+              <li class="nav-item">
                 <a href="/included/logout.inc.php" class="nav-link">Log out!</a>
-              </li>'
-              ;
+              </li>';
             }
             else{
               echo'
@@ -50,6 +52,9 @@
               </li>
               <li class="nav-item">
                 <a href="signup.php" class="nav-link">Sign up!</a>
+              </li>
+              <li class="nav-item">
+                <a href="guestbook.php" class="nav-link">Guestbook!</a>
               </li>';
             }
           ?>
@@ -59,8 +64,7 @@
           
         
         <form class="col-md-3.5 ms-md-auto d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          
         </form>
       </div>
     </div>

@@ -4,10 +4,10 @@ if(isset($_POST["submit"])){
 
     session_start();
 
-    $username = $_POST["username"];
-    $currentpwd = $_POST["currentpwd"];
-    $newpwd = $_POST["newpwd"];
-    $confirmpwd = $_POST["confirmpwd"];
+    $username = htmlspecialchars($_POST["username"]);
+    $currentpwd = htmlspecialchars($_POST["currentpwd"]);
+    $newpwd = htmlspecialchars($_POST["newpwd"]);
+    $confirmpwd = htmlspecialchars($_POST["confirmpwd"]);
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
@@ -19,7 +19,5 @@ if(isset($_POST["submit"])){
 
     changePW($conn, $username, $currentpwd, $newpwd, $confirmpwd);
 }
-else{
-    echo "do woi ma ned hi";
-}
+
 

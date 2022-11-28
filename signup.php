@@ -29,7 +29,10 @@
             if($_GET["error"]== "usernametaken"){
                 echo "Username is already taken!";
             }
-            if($_GET["error"]== "stmtfailed"){
+            if($_GET["error"]== "stmt1failed"){
+                echo "Something went wrong, try again!";
+            }
+            if($_GET["error"]== "stmt2failed"){
                 echo "Something went wrong, try again!";
             }
         } 
@@ -78,7 +81,7 @@
                     <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     
                     <div id="emailHelp" class="form-text">
-                        We\'ll never share your email with anyone else.
+                        We'll never share your email with anyone else.
                     </div>
                 </div>
 

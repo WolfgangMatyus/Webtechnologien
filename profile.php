@@ -14,28 +14,24 @@
 <?php
     if(isset($_SESSION["useruid"])){
         echo '
-<div class="container d-flex justify-content-center" style="padding: 20px;">
-    <div class="card border-primary" style="max-width: 60rem;">
+<div class="container d-flex justify-content-center">
+    <div class="card border-primary">
         <div class="card-header bg-transparent border-primary">
             <h4>Upload your profile photo</h4>
-        </div>
-                
-
+        </div>                
         <div class="card-body"
-
             <form action="included/upload.php" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="myfile" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
+                Select image to upload:
+                <input type="file" name="myfile" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
             </form>
-
         </div>
     </div>
 </div>
 <hr>
 <div class="container d-flex" >
-    <div class="container d-flex justify-content-center" style="padding: 20px;">
-        <div class="card border-primary " style="max-width: 60rem;" >
+    <div class="container d-flex justify-content-center">
+        <div class="card border-primary ">
             <div class="card-header bg-transparent border-primary">
                 <h5 class="card-title">Your current data</h5>
             </div>
@@ -73,20 +69,27 @@
                         '.$_SESSION["useremail"].'
                     </td>
                 </tr>
-                </table>
-    
-                <form action="/included/change.inc.php" method="POST">
-                <button type="submit" class="btn btn-primary" name="change">Change Data</button>
-                </form>
+                </table>';
+                ?>
+                <?php
+                if(!isset($_GET["error"])){
+                    echo '
+                    <form action="/included/change.inc.php" method="POST">
+                    <button type="submit" class="btn btn-primary" name="change">Change Data</button>
+                    </form>';
+                }
+                ?>
+                <?php
+                echo '
             </div>
         </div>
     </div>';
     ?>
     <?php
-        if((isset($_GET["error"]) && $_GET["error"]=="none")){
+        if(isset($_GET["error"]) && $_GET["error"]=="none"){
             echo '
-    <div class="container d-flex justify-content-center" style="padding: 20px;">
-        <div class="card border-primary " style="max-width: 60rem;" >
+    <div class="container d-flex justify-content-center">
+        <div class="card border-primary" >
             <div class="card-header bg-transparent border-primary">
                 <h5 class="card-title">Enter the data you want to change</h5>
             </div>
@@ -122,15 +125,25 @@
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     </div>
-
-                    
-                        <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
-                   
+                    <div class="row">
+                        <div class="col">
+                        <div>
+                            <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
+                        </div>
+                    </div>
                 </form>
+                <div class="col">
+                    <form action="../changepw.php" method="POST">
+                            <button type="submit "class="btn btn-primary" name="changePw">Change Password</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>';}
 }
 else echo 'Please log in for possible profile changes';
+?>
+<?php
+    include_once 'footer.php';
 ?>

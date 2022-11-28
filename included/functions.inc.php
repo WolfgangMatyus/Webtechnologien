@@ -1,6 +1,6 @@
 <?php //php only ohne closing tag ? >
 
-use LDAP\Result;
+//use LDAP\Result;
 
 function emptyInputSignup($gender, $name, $email, $username, $pwd, $pwdRepeat) {
 
@@ -250,6 +250,36 @@ function falseDate($arrival, $departure){
             $result = true;
         }
     return $result;
+}
+
+function setComment($conn, $username, $comment){
+    $sql ="INSERT INTO comments (comments_uid, comments_comment) VALUES (?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../guestbook.php?error=stmt2failed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $username, $comment);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+        header("location: ../guestbook.php?error=none");
+        exit();
+    exit();
+}
+
+function getComments($conn){
+    $sql = "SELECT *  FROM comments ORDER BY id desc";
+    $stmt = mysqli_stmt_init($conn);
+    /*if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../guestbook.php?error=stmt1failed");
+        exit();
+    }*/
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    return $result;
+    $conn = null;
+    exit();
 }
 
 // diese Funktion ist noch unvollständig, Ausgabe von DB-Liste mit For-Schleife
