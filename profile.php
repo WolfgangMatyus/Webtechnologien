@@ -13,6 +13,8 @@
 
 <div class="container">
     <?php
+        require_once 'included/dbh.inc.php';
+        require_once 'included/functions.inc.php';
         getReservations($conn, $_SESSION["useruid"])
     ?>
 </div>
