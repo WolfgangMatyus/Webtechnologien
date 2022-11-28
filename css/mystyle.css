@@ -43,3 +43,17 @@ a.nav-link{
     color: azure;
     background-color:hsl(244, 89%, 51%);
 }
+
+.container{
+    padding: 20px;
+    max-width: 60rem;
+}
+
+.footer-item{
+    padding: 0px 10px;
+
+}
+
+.impressum{
+    color: azure;
+}

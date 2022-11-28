@@ -85,8 +85,8 @@
     <?php
         if((isset($_GET["error"]) && $_GET["error"]=="none")){
             echo '
-    <div class="container d-flex justify-content-center" style="padding: 20px;">
-        <div class="card border-primary " style="max-width: 60rem;" >
+    <div class="container d-flex justify-content-center">
+        <div class="card border-primary" >
             <div class="card-header bg-transparent border-primary">
                 <h5 class="card-title">Enter the data you want to change</h5>
             </div>

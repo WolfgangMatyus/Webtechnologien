@@ -34,8 +34,8 @@
     ?>
 
 
-<div class="container d-flex justify-content-center" style="padding: 20px;">
-    <div class="card border-primary " style="max-width: 30rem;">
+<div class="container d-flex justify-content-center">
+    <div class="card border-primary">
         <div class="card-header bg-transparent border-primary"><h2>Log In!</h2></div>
             <div class="card-body text-success">
                 <h5 class="card-title">Log In to your Personal Profile!</h5>
@@ -69,7 +69,7 @@
             </div>
             
             <div class="card-footer bg-transparent border-primary">
-                Thank You! We wish you a nice stay!;
+                Thank You! We wish you a nice stay!
             </div>
         </div>
     </div>

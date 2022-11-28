@@ -5,11 +5,17 @@
     <nav class="navbar fixed-bottom">
         <div class="container-fluid text-center d-flex justify-content-center">
             <div class="d-flex justify-content-center">
-                <p class="impressum">&copySpitzerMatyus GmbH</p>
-                <p>|</p>   
-                <a class="impressum" href="impressum.php">Impressum</a>
-                <p>|</p>
-                <a class="impressum" href="faq.php">FAQ</a>
+                <div class="footer-item">
+                    <p class="impressum">&copySpitzerMatyus GmbH</p>
+                </div>
+                    <p>|</p>
+                <div class="footer-item">   
+                    <a class="impressum" href="impressum.php">Impressum</a>
+                </div>
+                    <p>|</p>
+                <div class="footer-item">
+                    <a class="impressum" href="faq.php">FAQ</a>
+                </div>
             </div>
             <br>    
         </div>
