@@ -3,7 +3,7 @@
 ?>
 
     
-    <div class="container-fluid d-flex justify-content-center" style="margin: 20px; padding: 20px 20px 20px 20px; background-image: url(pics/UnderwaterHotel.jpeg); background-position: center; background-repeat: no-repeat;">      
+    <div class="container-fluid d-flex justify-content-center" style="margin: 20px; padding: 20px 20px 20px 20px; background-position: center; background-repeat: no-repeat;">      
         <div class="jumbotron">
                 <h1 class="display-4">Welcome to our WebHotel!</h1>
                 <p class="lead" >We want to offer you exclusive service, to make your room booking as convenient as possible.</p>

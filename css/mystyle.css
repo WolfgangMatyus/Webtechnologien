@@ -2,19 +2,8 @@
 body {
     background-color: rgb(0, 183, 255);
 }
-
-.jumbotron{
-    color: azure;
-    background-color:hsla(200, 100%, 80%, 0.603);
-}
-
 nav{
-    background-color:hsl(244, 89%, 51%);
-}
-
-.jumbotron:hover{
-    color: azure;   
-    padding: 20px 20px;
+    margin: 0px 10px;
     background-color:hsl(244, 89%, 51%);
 }
 
@@ -44,16 +33,42 @@ a.nav-link{
     background-color:hsl(244, 89%, 51%);
 }
 
-.container{
+.jumbotron{
+    color: azure;
+    background-color:hsla(200, 100%, 80%, 0.603);
+}
+
+.panel-body
+{
+    color: azure;
+    background-color:hsla(200, 100%, 80%, 0.603);
     padding: 20px;
-    max-width: 60rem;
+}
+
+.jumbotron:hover{
+    color: azure;   
+    padding: 20px 20px;
+    background-color:hsl(244, 89%, 51%);
+}
+
+body{
+    background-image: url(../Pics/UnderwaterHotel.jpeg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 20px;
+    max-width: 90%;
 }
 
 .footer-item{
     padding: 0px 10px;
-
 }
 
 .impressum{
     color: azure;
+}
+
+img.card-img-top-profile{
+    width: 100px;
+    height: 100px;
 }
