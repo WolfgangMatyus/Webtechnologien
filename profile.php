@@ -14,28 +14,24 @@
 <?php
     if(isset($_SESSION["useruid"])){
         echo '
-<div class="container d-flex justify-content-center" style="padding: 20px;">
-    <div class="card border-primary" style="max-width: 60rem;">
+<div class="container d-flex justify-content-center">
+    <div class="card border-primary">
         <div class="card-header bg-transparent border-primary">
             <h4>Upload your profile photo</h4>
-        </div>
-                
-
+        </div>                
         <div class="card-body"
-
             <form action="included/upload.php" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="myfile" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
+                Select image to upload:
+                <input type="file" name="myfile" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
             </form>
-
         </div>
     </div>
 </div>
 <hr>
 <div class="container d-flex" >
-    <div class="container d-flex justify-content-center" style="padding: 20px;">
-        <div class="card border-primary " style="max-width: 60rem;" >
+    <div class="container d-flex justify-content-center">
+        <div class="card border-primary ">
             <div class="card-header bg-transparent border-primary">
                 <h5 class="card-title">Your current data</h5>
             </div>
