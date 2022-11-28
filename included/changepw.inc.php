@@ -19,7 +19,5 @@ if(isset($_POST["submit"])){
 
     changePW($conn, $username, $currentpwd, $newpwd, $confirmpwd);
 }
-else{
-    echo "do woi ma ned hi";
-}
+
 
