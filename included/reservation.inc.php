@@ -2,7 +2,9 @@
 
 if(isset($_POST["submit"])){
 //    echo "It works";
+    session_start();
 
+    $userUid = $_SESSION["useruid"];
     $arrival = htmlspecialchars($_POST["arrival"]);
     $departure = htmlspecialchars($_POST["departure"]);
     $breakfast = htmlspecialchars($_POST["breakfast"]);
@@ -21,7 +23,7 @@ if(isset($_POST["submit"])){
         exit();
     }
 
-    createReservation($conn, $arrival, $departure, $breakfast, $parking, $pet);
+    createReservation($conn, $userUid, $arrival, $departure, $breakfast, $parking, $pet);
 }
 else{
     header("location: ../reservation.php");

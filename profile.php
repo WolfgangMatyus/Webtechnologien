@@ -11,6 +11,12 @@
     </div>
 </div>
 
+<div class="container">
+    <?php
+        getReservations($conn, $_SESSION["useruid"])
+    ?>
+</div>
+
 <?php
     if(isset($_SESSION["useruid"])){
         echo '
@@ -19,15 +25,23 @@
         <div class="card-header bg-transparent border-primary">
             <h4>Upload your profile photo</h4>
         </div>                
-        <div class="card-body"
+        <div class="card-body">
             <form action="included/upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload:
-                <input type="file" name="myfile" id="fileToUpload">
+                <input type="file" name="myfile" accept="image/png, image/gif, image/jpeg" id="fileToUpload">
                 <input type="submit" value="Upload Image" name="submit">
             </form>
         </div>
     </div>
-</div>
+</div>';
+
+    if((isset($_GET["error"]) && $_GET["error"]=="no")){
+        echo '<div class="container d-flex justify-content-center text-success">
+        <h2>Image successfully uploaded.</h2>
+    </div>';
+    }
+
+echo '
 <hr>
 <div class="container d-flex" >
     <div class="container d-flex justify-content-center">

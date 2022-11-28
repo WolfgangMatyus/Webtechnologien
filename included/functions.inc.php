@@ -108,15 +108,15 @@ function createUser($conn, $gender, $name, $email, $username, $pwd){
     exit();
 }
 
-function createReservation($conn, $arrival, $departure, $breakfast, $parking, $pet){
-    $sql ="INSERT INTO reservations (reservationsArrival, reservationsDeparture, reservationsBreakfast, reservationsParking, reservationsPet, reservationsStatus) VALUES (?, ?, ?, ?, ?, 'new');";
+function createReservation($conn, $userUid, $arrival, $departure, $breakfast, $parking, $pet){
+    $sql ="INSERT INTO reservations (reservationsUid, reservationsArrival, reservationsDeparture, reservationsBreakfast, reservationsParking, reservationsPet, reservationsStatus) VALUES (?, ?, ?, ?, ?, ?, 'new');";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../reservation.php?error=stmt2failed");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "sssss", $arrival, $departure, $breakfast, $parking, $pet);
+    mysqli_stmt_bind_param($stmt, "ssssss", $userUid, $arrival, $departure, $breakfast, $parking, $pet);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
         header("location: ../reservation.php?error=none");
@@ -283,7 +283,7 @@ function getComments($conn){
 }
 
 // diese Funktion ist noch unvollständig, Ausgabe von DB-Liste mit For-Schleife
-/*function getReservations($conn, $username){
+function getReservations($conn, $username){
     $uidExists = uidExists($conn, $username, $username);
     $sql ="SELECT * FROM reservations WHERE reservationsUid = ?;";
     $stmt = mysqli_stmt_init($conn);
@@ -305,4 +305,4 @@ function getComments($conn){
     }
 
     mysqli_stmt_close($stmt);
-}*/
+}

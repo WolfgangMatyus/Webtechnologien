@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) { // if save button on the form is clicked
     $file = $_FILES['myfile']['tmp_name'];
     $size = $_FILES['myfile']['size'];
 
-    if (!in_array($extension, ['png', 'jpeg', 'jpg'])) {
+    if (!in_array($extension, ['PNG','png', 'jpeg', 'jpg'])) {
         echo "You file extension must be .png, .jpeg or .jpg";
     } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1Megabyte
         echo "File too large!";
@@ -26,8 +26,7 @@ if (isset($_POST['submit'])) { // if save button on the form is clicked
         if (move_uploaded_file($file, $destination)) {
             $sql = "INSERT INTO files (name, size, downloads) VALUES ('$filename', $size, 0)";
             if (mysqli_query($conn, $sql)) {
-                header("location: ../profile.php");
-                echo "File uploaded successfully";
+                header("location: ../profile.php?error=no");
             }
         } else {
             echo "Failed to upload file.";
