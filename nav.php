@@ -50,6 +50,9 @@
               </li>
               <li class="nav-item">
                 <a href="signup.php" class="nav-link">Sign up!</a>
+              </li>
+              <li class="nav-item">
+                <a href="guestbook.php" class="nav-link">Guestbook!</a>
               </li>';
             }
           ?>

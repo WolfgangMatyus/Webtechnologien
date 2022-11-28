@@ -2,7 +2,7 @@
 
     <div style="height: 100px"></div>  
    
-    <nav class="navbar fixed-bottom" style="background-color: #e3f2fd;">
+    <nav class="navbar fixed-bottom">
         <div class="container-fluid text-center d-flex justify-content-center">
             <div class="d-flex justify-content-center">
                 <p class="impressum">&copySpitzerMatyus GmbH</p>
