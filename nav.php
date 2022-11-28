@@ -4,7 +4,8 @@
 
       <?php
         if(isset($_SESSION["useruid"])) {
-          echo "Welcome " . $_SESSION["useruid"];
+          echo "Welcome <img src='Pics/avatar.jpg' class='card-img-top-profile' alt='Profile Picture' style='width: 50px; height: 50px;'> "
+          . $_SESSION["useruid"];
         }
         else echo "WEBHOTEL";
       ?>

@@ -57,3 +57,8 @@ a.nav-link{
 .impressum{
     color: azure;
 }
+
+img.card-img-top-profile{
+    width: 100px;
+    height: 100px;
+}

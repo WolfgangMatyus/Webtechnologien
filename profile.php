@@ -38,6 +38,11 @@
             <div class="card-body">
                 <table>
                 <tr>
+                    <div class="card-img-top-profile">
+                        <img src="Pics/avatar.jpg" class="card-img-top-profile" alt="Profile Picture" style="width: 100px; height: 100px;">
+                    </div>
+                <tr>
+                <tr>
                     <th>
                         Gender:
                     </th>
