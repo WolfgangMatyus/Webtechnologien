@@ -69,17 +69,24 @@
                         '.$_SESSION["useremail"].'
                     </td>
                 </tr>
-                </table>
-    
-                <form action="/included/change.inc.php" method="POST">
-                <button type="submit" class="btn btn-primary" name="change">Change Data</button>
-                </form>
+                </table>';
+                ?>
+                <?php
+                if(!isset($_GET["error"])){
+                    echo '
+                    <form action="/included/change.inc.php" method="POST">
+                    <button type="submit" class="btn btn-primary" name="change">Change Data</button>
+                    </form>';
+                }
+                ?>
+                <?php
+                echo '
             </div>
         </div>
     </div>';
     ?>
     <?php
-        if((isset($_GET["error"]) && $_GET["error"]=="none")){
+        if(isset($_GET["error"]) && $_GET["error"]=="none"){
             echo '
     <div class="container d-flex justify-content-center">
         <div class="card border-primary" >
@@ -118,14 +125,18 @@
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     </div>
-
-                    <div>
-                        <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
+                    <div class="row">
+                        <div class="col">
+                        <div>
+                            <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
+                        </div>
                     </div>
                 </form>
-                <form action="../changepw.php" method="POST">
-                    <button type="submit"class="btn btn-primary" name="changePw">Change Password</button>
-                </form>   
+                <div class="col">
+                    <form action="../changepw.php" method="POST">
+                            <button type="submit "class="btn btn-primary" name="changePw">Change Password</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
