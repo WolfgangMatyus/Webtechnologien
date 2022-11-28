@@ -3,13 +3,12 @@
 ?>
 
     
-    <div class="container-fluid d-flex justify-content-center" style="margin: 20px; padding: 20px 20px 20px 20px; background-image: url(pics/fh_technikum_kv.jpg); background-position: center; background-repeat: no-repeat;">      
+    <div class="container-fluid d-flex justify-content-center" style="margin: 20px; padding: 20px 20px 20px 20px; background-image: url(pics/UnderwaterHotel.jpeg); background-position: center; background-repeat: no-repeat;">      
         <div class="jumbotron">
                 <h1 class="display-4">Welcome to our WebHotel!</h1>
                 <p class="lead" >We want to offer you exclusive service, to make your room booking as convenient as possible.</p>
-            <!--style="color:white; background-color:hsla(240, 100%, 50%, 0.7);"-->
             <hr class="my-4" >
-                <p >It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p class="my-4">It uses utility classes for typography and spacing to space content out within the larger container.</p>
             <p class="lead text-center">
                 <a class="btn btn-primary btn-lg" href="signup.php" role="button">Sign Up now!</a>
                 <a class="btn btn-primary btn-lg" href="login.php" role="button">I am already part of the family!</a>

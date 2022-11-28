@@ -1,0 +1,11 @@
+
+.jumbotron{
+    color: azure;
+    background-color:hsla(200, 100%, 80%, 0.603);
+}
+
+.navbar{
+    color: azure;
+    background-color:hsl(244, 89%, 51%);
+    padding: 10px 10px;
+}
