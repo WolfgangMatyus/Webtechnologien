@@ -1,74 +1,58 @@
 /* .=class, #=id,  'name'=tag :=effect*/
 body {
-    background-color: rgb(0, 183, 255);
-}
-nav{
-    margin: 0px 10px;
-    background-color:hsl(244, 89%, 51%);
+  background-color: rgb(0, 183, 255);
 }
 
-#navbarSupportedContent{
-    text-align: center;
-    flex-grow: 0.5;
-    color: azure;   
-    padding: 10px 10px;
+.jumbotron {
+  color: azure;
+  background-color: hsla(200, 100%, 80%, 0.603);
 }
 
-.navbar:hover{
-    padding: 10px 10px;
+nav {
+  background-color: hsl(244, 89%, 51%);
 }
 
-a.nav-link{
-    font-family: Arial, Helvetica, sans-serif;
-    color: azure;
-    margin: 0px 20px 0px 20px;
+.jumbotron:hover {
+  color: azure;
+  padding: 20px 20px;
+  background-color: hsl(244, 89%, 51%);
 }
-.nav-item:hover{
-    background-color:hsl(202, 71%, 48%);
-    text-size-adjust: 500px;
+
+#navbarSupportedContent {
+  text-align: center;
+  flex-grow: 0.5;
+  color: azure;
+  padding: 10px 10px;
+}
+
+.navbar:hover {
+  padding: 10px 10px;
+}
+
+a.nav-link {
+  font-family: Arial, Helvetica, sans-serif;
+  color: azure;
+  margin: 0px 20px 0px 20px;
+}
+.nav-item:hover {
+  background-color: hsl(202, 71%, 48%);
+  text-size-adjust: 500px;
 }
 
 .navbar {
-    color: azure;
-    background-color:hsl(244, 89%, 51%);
+  color: azure;
+  background-color: hsl(244, 89%, 51%);
 }
 
-.jumbotron{
-    color: azure;
-    background-color:hsla(200, 100%, 80%, 0.603);
+.container {
+  padding: 20px;
+  max-width: 60rem;
 }
 
-.panel-body
-{
-    color: azure;
-    background-color:hsla(200, 100%, 80%, 0.603);
-    padding: 20px;
+.footer-item {
+  padding: 0px 10px;
 }
 
-.jumbotron:hover{
-    color: azure;   
-    padding: 20px 20px;
-    background-color:hsl(244, 89%, 51%);
-}
-
-body{
-    background-image: url(../Pics/UnderwaterHotel.jpeg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 20px;
-    max-width: 90%;
-}
-
-.footer-item{
-    padding: 0px 10px;
-}
-
-.impressum{
-    color: azure;
-}
-
-img.card-img-top-profile{
-    width: 100px;
-    height: 100px;
+.impressum {
+  color: azure;
 }

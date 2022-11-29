@@ -11,6 +11,14 @@
     </div>
 </div>
 
+<div class="container">
+    <?php
+        require_once 'included/dbh.inc.php';
+        require_once 'included/functions.inc.php';
+        getReservations($conn, $_SESSION["useruid"])
+    ?>
+</div>
+
 <?php
     if(isset($_SESSION["useruid"])){
         echo '
@@ -77,7 +85,7 @@
                 </table>';
                 ?>
                 <?php
-                if(!isset($_GET["error"])){
+                if(!(isset($_GET["error"])&& $_GET["error"]=="none")){
                     echo '
                     <form action="/included/change.inc.php" method="POST">
                     <button type="submit" class="btn btn-primary" name="change">Change Data</button>
