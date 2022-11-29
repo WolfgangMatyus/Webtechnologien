@@ -70,10 +70,12 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h4 class="guestbook">Recent Comments</h4>           
+                <h4 class="guestbook">Recent Comments:</h4>
+                <table class="guestbook">          
                     <?php
                         include 'included/guestbook.inc.php';
                     ?>
+                </table>'
             </div>
         </div>
     </div>
