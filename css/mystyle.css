@@ -64,11 +64,7 @@ a.nav-link.active{
 }
 
 
-.panel-body{
-    color: azure;
-    background-color:rgb(63, 98, 168);
-    padding: 20px;
-}
+
 
 .impressum{
     color: azure;
@@ -80,4 +76,15 @@ a.nav-link.active{
 
 h4.guestbook{
     font-family: cursive;
+    text-align: center;
+}
+.panel-body{
+    
+    color: azure;
+    background-color:rgb(63, 98, 168);
+    padding: 20px;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 500px;
+    margin: auto;
 }
