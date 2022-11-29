@@ -64,10 +64,9 @@ a.nav-link.active{
 }
 
 
-.panel-body
-{
+.panel-body{
     color: azure;
-    background-color:hsla(200, 100%, 80%, 0.603);
+    background-color:rgb(63, 98, 168);
     padding: 20px;
 }
 

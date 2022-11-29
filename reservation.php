@@ -138,17 +138,16 @@
                     <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
                     <input type="text" class="form-control" placeholder="Which Pet?" aria-label="Pet" aria-describedby="addon-wrapping" name="pet">
                 </div>
+                
+            </div>
+            <div class="card-footer bg-transparent border-primary">
                 <div class="btn btn-primary btn-lg">
                     <button type="submit" class="btn btn-primary" name="submit" style="margin: 20px;">Set Reservation!</button>
-                </div>
+                </div>            
             </div>
         </form>    
 
-        <div class="card-footer bg-transparent border-success">
-
-            Thank You! We wish you a nice stay!
-            
-        </div>
+        
     </div>
 </div>
 

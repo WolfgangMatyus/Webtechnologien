@@ -21,9 +21,14 @@
         </div>                
         <div class="card-body"
             <form action="included/upload.php" method="post" enctype="multipart/form-data">
-                Select image to upload:
-                <input type="file" name="myfile" id="fileToUpload">
-                <input type="submit" value="Upload Image" name="submit">
+                Select image to upload: <br>
+                <div>
+                    <input type="file" name="myfile" id="fileToUpload">
+                </div>
+                <br>
+                <div>
+                    <input type="submit" value="Upload Image" name="submit">
+                </div>
             </form>
         </div>
     </div>
@@ -82,7 +87,9 @@
                     echo '
                     <div class="card-footer bg-transparent border-primary">
                         <form action="/included/change.inc.php" method="POST">
+                        <div class="btn btn-primary btn-lg">
                             <button type="submit" class="btn btn-primary btn-lg" name="change">Change Data</button>
+                        </div>
                         </form>
                     </div>';
                 }
@@ -136,7 +143,7 @@
                         <div class="row btn-lg">
                             <div class="col btn-lg">
                                 <div class="btn btn-primary btn-lg">
-                                    <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
+                                    <button type="submit" class="btn btn-primary" name="submitchange">Change <br> Data</button>
                                 </div>
                             </div>        
                         

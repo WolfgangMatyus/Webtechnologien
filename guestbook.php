@@ -52,16 +52,17 @@
                         <p>Please note that we will have to delete inappropriate comments!</p>
                     </div>
                     
-                <div class="mb-3">
+                <div class="btn btn-primary btn-lg">
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </div>
                 </form> 
+            </div>
+            <div class="card-footer bg-transparent border-primary">
+            Thank You for your Comment! We wish you a nice stay!
             </div>';
             }
           ?>
-            <div class="card-footer bg-transparent border-primary">
-                Thank You for your Comment! We wish you a nice stay!
-            </div>
+
         </div>
     </div>
 </div>
