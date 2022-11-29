@@ -63,9 +63,6 @@ a.nav-link.active{
     background-color:hsl(244, 80%, 50%);
 }
 
-
-
-
 .impressum{
     color: azure;
 }
@@ -79,7 +76,7 @@ h4.guestbook{
     text-align: center;
 }
 .panel-body{
-    
+    text-align: center;
     color: azure;
     background-color:rgb(63, 98, 168);
     padding: 20px;
