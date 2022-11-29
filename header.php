@@ -20,12 +20,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 <header>
-    <div>
-        
-    </div>
-    <hr>   
-    <?php
-        include 'nav.php';
-    ?>    
+    <div class="container-fluid justify-content-center" id="header">
+        <div>
+            <figure class="text-center">
+                <a class="navbar-brand col-md-2" href="index.php">
+                    <?php
+                    if(isset($_SESSION["useruid"])) {
+                        echo "Welcome <img src='Pics/avatar.jpg' class='card-img-top-profile' alt='Profile Picture' style='width: 50px; height: 50px;'> "
+                        . $_SESSION["useruid"];
+                    }
+                    else echo "WEBHOTEL";
+                    ?>
+                </a>
+            </figure>
+            <hr>
+        </div>
+            <?php
+                include 'nav.php';
+            ?>
+    </div>    
 </header>
 

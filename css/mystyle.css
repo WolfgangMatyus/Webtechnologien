@@ -4,6 +4,15 @@ body {
     min-width: 375px;
 }
 
+div#header.container{
+    margin: 0px;
+    padding: 0px;
+}
+
+figure.text-center{
+    margin: 0px;
+    padding: 0px;
+}
 
 
 img.card-img-top-profile{
@@ -20,12 +29,8 @@ nav{
     text-align: center;
     flex-grow: 0.5;
     color: azure;   
-    padding: 10px 10px;
 }
 
-.navbar:hover{
-    padding: 10px 10px;
-}
 
 a.nav-link{
     font-family: Arial, Helvetica, sans-serif;

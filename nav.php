@@ -1,17 +1,4 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <a class="navbar-brand col-md-2" href="index.php">
-
-      <?php
-        if(isset($_SESSION["useruid"])) {
-          echo "Welcome <img src='Pics/avatar.jpg' class='card-img-top-profile' alt='Profile Picture' style='width: 50px; height: 50px;'> "
-          . $_SESSION["useruid"];
-        }
-        else echo "WEBHOTEL";
-      ?>
-        
-      </a>
-    
+    <nav class="navbar navbar-expand-lg">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -63,9 +50,6 @@
       </div>
     </div>
   </nav>
-</div>
-
-<div style="height: 60px">
 </div> 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
