@@ -1,10 +1,23 @@
 /* .=class, #=id,  'name'=tag :=effect*/
 body {
-    background-color: rgb(0, 183, 255);
+    background-color: rgb(0, 119, 255);
+    /*ackground-image: url(../Pics/UnderwaterHotel.jpeg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 20px;
+    max-width: 90%;*/
+    min-width: 375px;
 }
+
+img.card-img-top-profile{
+    width: 100px;
+    height: 100px;
+}
+
 nav{
     margin: 0px 10px;
-    background-color:hsl(244, 89%, 51%);
+    background-color:hsl(244, 80%, 51%);
 }
 
 #navbarSupportedContent{
@@ -23,26 +36,29 @@ a.nav-link{
     color: azure;
     margin: 0px 20px 0px 20px;
 }
+
+a.nav-link:active{
+    font-family: Arial, Helvetica, sans-serif;
+    color: azure;
+    margin: 0px 20px 0px 20px;
+}
+
 .nav-item:hover{
-    background-color:hsl(202, 71%, 48%);
-    text-size-adjust: 500px;
+    background-color:hsl(200, 70%, 48%);
+    padding: auto;
+    font-size: 20px;
 }
 
 .navbar {
+    margin: 0;
     color: azure;
-    background-color:hsl(244, 89%, 51%);
+    background-color:hsl(244, 80%, 51%);
 }
 
 .jumbotron{
     color: azure;
     background-color:hsla(200, 100%, 80%, 0.603);
-}
-
-.panel-body
-{
-    color: azure;
-    background-color:hsla(200, 100%, 80%, 0.603);
-    padding: 20px;
+    padding: 20px 20px;
 }
 
 .jumbotron:hover{
@@ -51,24 +67,28 @@ a.nav-link{
     background-color:hsl(244, 89%, 51%);
 }
 
-body{
-    background-image: url(../Pics/UnderwaterHotel.jpeg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 20px;
-    max-width: 90%;
+.container-fluid{
+    background-color: rgb(0, 119, 255);
 }
 
-.footer-item{
-    padding: 0px 10px;
+.container{
+    background-color: rgb(0, 119, 255);
+}
+
+
+
+.panel-body
+{
+    color: azure;
+    background-color:hsla(200, 100%, 80%, 0.603);
+    padding: 20px;
 }
 
 .impressum{
     color: azure;
 }
 
-img.card-img-top-profile{
-    width: 100px;
-    height: 100px;
+.footer-item{
+    padding: 0px 10px;
 }
+

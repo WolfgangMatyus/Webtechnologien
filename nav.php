@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <nav class="navbar navbar-expand-lg fixed-top">
       <a class="navbar-brand col-md-2" href="index.php">
 
@@ -59,14 +59,7 @@
               </li>';
             }
           ?>
-        
         </ul> 
-          
-          
-        
-        <form class="col-md-3.5 ms-md-auto d-flex" role="search">
-          
-        </form>
       </div>
     </div>
   </nav>
