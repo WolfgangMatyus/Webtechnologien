@@ -36,11 +36,11 @@
 <div class="container d-flex justify-content-center">
     <div class="card border-primary">
         <div class="card-header bg-transparent border-primary"><h2>Welcome to our Guestbook!</h2></div>
-            <div class="card-body text-success">
+            <div class="card-body text-primary">
             <?php
             if(!isset($_SESSION["useruid"])) {
               echo'
-                <h5 class="card-title">Please <a class="guestbook-login" href="login.php">Log In</a> to your personal Profile to leave a comment!</h5>
+                <h5 class="card-title">Please <a class="guestbook-login" href="login.php">LOG IN</a> to your personal Profile to leave a comment!</h5>
                 <p class="card-text"></p>';                
             }
             else{
@@ -69,7 +69,7 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-body">
-            <h4>Recent Comments</h4>           
+            <h4 class="guestbook">Recent Comments</h4>           
                 <?php
                     include 'included/guestbook.inc.php';
                 ?>

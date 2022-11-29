@@ -37,12 +37,12 @@
 
 <div class="container d-flex justify-content-center" style="padding: 20px;">
     <div class="card border-primary " style="max-width: 60rem;" >
-        <div class="card-header bg-transparent border-success">
+        <div class="card-header bg-transparent border-primary">
             <h4>Book your prefered room!</h4>
         </div>
         
         <form action="/included/reservation.inc.php" method="POST">
-            <div class="card-body text-success">
+            <div class="card-body text-primary">
                 <h5 class="card-title">Please enter the below requested information.</h5>
                 <hr>
 
@@ -138,9 +138,9 @@
                     <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
                     <input type="text" class="form-control" placeholder="Which Pet?" aria-label="Pet" aria-describedby="addon-wrapping" name="pet">
                 </div>
-
-                <button type="submit" class="btn btn-primary" name="submit" style="margin: 20px;">Set Reservation!</button>
-
+                <div class="btn btn-primary btn-lg">
+                    <button type="submit" class="btn btn-primary" name="submit" style="margin: 20px;">Set Reservation!</button>
+                </div>
             </div>
         </form>    
 

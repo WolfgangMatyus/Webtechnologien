@@ -74,19 +74,22 @@
                         '.$_SESSION["useremail"].'
                     </td>
                 </tr>
-                </table>';
+                </table>
+            </div>';
                 ?>
                 <?php
                 if(!isset($_GET["error"])){
                     echo '
-                    <form action="/included/change.inc.php" method="POST">
-                    <button type="submit" class="btn btn-primary" name="change">Change Data</button>
-                    </form>';
+                    <div class="card-footer bg-transparent border-primary">
+                        <form action="/included/change.inc.php" method="POST">
+                            <button type="submit" class="btn btn-primary btn-lg" name="change">Change Data</button>
+                        </form>
+                    </div>';
                 }
                 ?>
                 <?php
                 echo '
-            </div>
+            
         </div>
     </div>';
     ?>
@@ -130,18 +133,22 @@
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
                             <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                         </div>
-                        <div class="row">
-                            <div class="col">
-                            <div>
-                                <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
+                        <div class="row btn-lg">
+                            <div class="col btn-lg">
+                                <div class="btn btn-primary btn-lg">
+                                    <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
+                                </div>
+                            </div>        
+                        
+                    </form>
+                            <div class="col btn-lg">    
+                                <form action="../changepw.php" method="POST">
+                                <div class="btn btn-primary btn-lg">
+                                    <button type="submit "class="btn btn-primary" name="changePw">Change Password</button>
+                                </div>
+                                </form>
                             </div>
                         </div>
-                    </form>
-                    <div class="col">
-                        <form action="../changepw.php" method="POST">
-                                <button type="submit "class="btn btn-primary" name="changePw">Change Password</button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
