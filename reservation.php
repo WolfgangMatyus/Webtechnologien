@@ -35,8 +35,8 @@
         echo '</div>';
     ?>
 
-<div class="container d-flex justify-content-center" style="padding: 20px;">
-    <div class="card border-primary " style="max-width: 60rem;" >
+<div class="container justify-content-center" style="padding: 20px;">
+    <div class="card border-primary "style="max-width: 40rem;">
         <div class="card-header bg-transparent border-success">
             <h4>Book your prefered room!</h4>
         </div>

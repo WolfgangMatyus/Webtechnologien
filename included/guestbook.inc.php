@@ -28,7 +28,9 @@ for($i=0; $i<3; $i++)
 $dsatz=mysqli_fetch_assoc($res);
 $username = $dsatz["comments_uid"];
 $comment = $dsatz["comments_comment"];
-echo '
+if(isset($_SESSION["thumb_path"])){echo '
+<tr><td> User: '.$username. " " . '<img src="included/' . $_SESSION["thumb_path"] . '"><hr> Comment: <br>'.$comment.'<hr><br></td>';}
+else echo '
 <tr><td> User: '.$username.'<hr> Comment: <br>'.$comment.'<hr><br></td>';
 };
 echo '</table>';                    
