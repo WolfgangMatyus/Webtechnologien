@@ -11,94 +11,102 @@
         </div>
     </div>
 
+<div class="container">
     <?php
-        if(isset($_SESSION["useruid"])){
-            echo '
-    <div class="container d-flex justify-content-center">
-        <div class="card border-primary">
-            <div class="card-header bg-transparent border-primary">
-                <h4>Upload your profile photo</h4>
-            </div>                
-            <div class="card-body"
-                <form action="included/upload.php" method="post" enctype="multipart/form-data">
-                    Select image to upload: <br>
-                    <div>
-                        <input type="file" name="myfile" id="fileToUpload">
-                    </div>
-                    <br>
-                    <div>
-                        <input type="submit" value="Upload Image" name="submit">
-                    </div>
-                </form>
+        require_once 'included/dbh.inc.php';
+        require_once 'included/functions.inc.php';
+        getReservations($conn, $_SESSION["useruid"])
+    ?>
+</div>
+
+<?php
+    if(isset($_SESSION["useruid"])){
+      echo '
+        <div class="container d-flex justify-content-center">
+            <div class="card border-primary">
+                <div class="card-header bg-transparent border-primary">
+                    <h4>Upload your profile photo</h4>
+                </div>                
+                <div class="card-body">
+                    <form action="included/upload.php" method="post" enctype="multipart/form-data">
+                        Select image to upload: <br>
+                        <div>
+                          <input type="file" name="myfile" id="fileToUpload">
+                        </div>
+                        <br>
+                        <div>
+                          <input type="submit" value="Upload Image" name="submit">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="container d-flex" >
-        <div class="container d-flex justify-content-center">
-            <div class="card border-primary ">
-                <div class="card-header bg-transparent border-primary">
-                    <h5 class="card-title">Your current data</h5>
-                </div>
-                <div class="card-body">
-                    <table>
-                    <tr>
-                        <div class="card-img-top-profile">
-                            <img src="Pics/avatar.jpg" class="card-img-top-profile" alt="Profile Picture" style="width: 100px; height: 100px;">
-                        </div>
-                    <tr>
-                    <tr>
-                        <th>
-                            Gender:
-                        </th>
-                        <td>
-                            '.$_SESSION["usergender"].'
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            Username:  
-                        </th>
-                        <td>
-                            '.$_SESSION["useruid"].'
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            Full name:
-                        </th>
-                        <td>
-                            '.$_SESSION["username"].'
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            Email:
-                        </th>
-                        <td>
-                            '.$_SESSION["useremail"].'
-                        </td>
-                    </tr>
-                    </table>
-                </div>';
-                    ?>
-                    <?php
-                    if(!isset($_GET["error"])){
-                        echo '
-                        <div class="card-footer bg-transparent border-primary">
-                            <form action="/included/change.inc.php" method="POST">
-                            <div class="btn btn-primary btn-lg">
-                                <button type="submit" class="btn btn-primary btn-lg" name="change">Change Data</button>
+      <hr>
+        <div class="container d-flex" >
+            <div class="container d-flex justify-content-center">
+                <div class="card border-primary ">
+                    <div class="card-header bg-transparent border-primary">
+                        <h5 class="card-title">Your current data</h5>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                        <tr>
+                            <div class="card-img-top-profile">
+                                <img src="Pics/avatar.jpg" class="card-img-top-profile" alt="Profile Picture" style="width: 100px; height: 100px;">
                             </div>
-                            </form>
-                        </div>';
-                    }
-                    ?>
-                    <?php
-                    echo '
-                
-            </div>
-        </div>';
+                        <tr>
+                        <tr>
+                            <th>
+                                Gender:
+                            </th>
+                            <td>
+                                '.$_SESSION["usergender"].'
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Username:  
+                            </th>
+                            <td>
+                                '.$_SESSION["useruid"].'
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Full name:
+                            </th>
+                            <td>
+                                '.$_SESSION["username"].'
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Email:
+                            </th>
+                            <td>
+                                '.$_SESSION["useremail"].'
+                            </td>
+                        </tr>
+                        </table>
+                    </div>';
+                        ?>
+                        <?php
+                        if(!isset($_GET["error"])){
+                            echo '
+                            <div class="card-footer bg-transparent border-primary">
+                                <form action="/included/change.inc.php" method="POST">
+                                <div class="btn btn-primary btn-lg">
+                                    <button type="submit" class="btn btn-primary btn-lg" name="change">Change Data</button>
+                                </div>
+                                </form>
+                            </div>';
+                        }
+                        ?>
+                        <?php
+                        echo '
+
+                </div>
+            </div>';
         ?>
         <?php
             if(isset($_GET["error"]) && $_GET["error"]=="none"){

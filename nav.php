@@ -1,4 +1,18 @@
-    <nav class="navbar navbar-expand-lg">
+
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand col-md-2" href="index.php">
+        <?php
+          if(isset($_SESSION["useruid"]) && isset($_SESSION["thumb_path"])) {
+            echo "Welcome " . $_SESSION["useruid"] . " " . '<img src="included/' . $_SESSION["thumb_path"] . '">';
+          }
+          elseif (isset($_SESSION["useruid"])){
+            echo "Welcome " . $_SESSION["useruid"]
+          }
+          else echo "WEBHOTEL";
+        ?>
+      </a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

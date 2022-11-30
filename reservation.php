@@ -35,8 +35,8 @@
             echo '</div>';
         ?>
 
-    <div class="container d-flex justify-content-center" style="padding: 20px;">
-        <div class="card border-primary " style="max-width: 60rem;" >
+    <div class="container d-flex justify-content-center"">
+        <div class="card border-primary ">
             <div class="card-header bg-transparent border-primary">
                 <h4>Book your prefered room!</h4>
             </div>
@@ -45,7 +45,6 @@
                 <div class="card-body text-primary">
                     <h5 class="card-title">Please enter the below requested information.</h5>
                     <hr>
-
                     <div>
                         Reservation Date:
                     </div>
