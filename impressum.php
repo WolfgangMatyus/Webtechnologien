@@ -98,7 +98,8 @@
         <div class="col"></div>
             <div class="col text-center">
                 <div class="card" style="width: 18rem;">
-                    <img src="https://api.lorem.space/image/face?w=300&amp;amp;amp;amp;h=300" class="card-img-top" alt="Robert Spitzer">
+                <!--<img src="https://api.lorem.space/image/face?w=300&amp;amp;amp;amp;h=300" class="card-img-top" alt="Robert Spitzer">-->
+                    <img src="Pics/Profilbilder/f1.jpg" class="card-img-top" alt="Robert Spitzer" height="300">
                     <div class="card-body">
                         <h5 class="card-title">Robert Spitzer</h5>
                         <a href="#" class="btn btn-primary">Contact</a>
@@ -108,7 +109,8 @@
             <div class="col"></div>
             <div class="col text-center">
                 <div class="card" style="width: 18rem;">
-                    <img src="https://source.unsplash.com/300x300/?portrait" class="card-img-top" alt="Wolfgang Matyus">
+                    <!--<img src="https://source.unsplash.com/300x300/?portrait" class="card-img-top" alt="Wolfgang Matyus">-->
+                    <img src="Pics/Profilbilder/bild.jpg" class="card-img-top" alt="Wolfgang Matyus" width="300" height="300">
                     <div class="card-body">
                         <h5 class="card-title">Wolfgang Matyus</h5>
                         <a href="#" class="btn btn-primary">Contact</a>

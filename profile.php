@@ -46,8 +46,15 @@
                     <div class="card-body">
                         <table>
                         <tr>
-                            <div class="card-img-top-profile">
-                                <img src="Pics/avatar.jpg" class="card-img-top-profile" alt="Profile Picture" style="width: 100px; height: 100px;">
+                            <div class="card-img-top-profile">'
+                            ?>    
+                            <?php
+                                    if(isset($_SESSION["username"]) && isset($_SESSION["thumb_path"])) {
+                                        echo " <img src='included/" . $_SESSION['thumb_path'] . " '> ";
+                                    }
+                                    else echo "<img src='Pics/Profilbilder/avatar.jpg' class='card-img-top-profile' alt='Profile Picture' style='width: 100px; height: 100px;'>";
+                                    ?>
+                                <?php echo '
                             </div>
                         <tr>
                         <tr>
@@ -102,15 +109,7 @@
                 </div>
                 <hr>                
             </div>
-            <div class="container">
-                '?><?php
-                    require_once 'included/dbh.inc.php';
-                    require_once 'included/functions.inc.php';
-                    getReservations($conn, $_SESSION["useruid"])
-                ?>
-                <?php
-                        echo '
-                </div>';
+          ';
         ?>
         <?php
             if(isset($_GET["error"]) && $_GET["error"]=="none"){

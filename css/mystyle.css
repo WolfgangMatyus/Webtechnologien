@@ -10,13 +10,7 @@
         background-image: url(../Pics/waterbubbles.jpg);
         color: hsla(244, 80%, 50%);
     }
-/*
-    div#header:hover{
-        background-image: url();
-        background-color:hsl(244, 80%, 50%);
-        color: azure;
-    }
-*/
+
     hr.headerline{
         margin: 1px;
     }

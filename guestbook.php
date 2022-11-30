@@ -78,7 +78,7 @@
                     <?php
                         include 'included/guestbook.inc.php';
                     ?>
-                </table>'
+                </table>
             </div>
         </div>
     </div>
