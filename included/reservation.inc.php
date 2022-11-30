@@ -2,9 +2,7 @@
 
 if(isset($_POST["submit"])){
 //    echo "It works";
-    session_start();
 
-    $userUid = $_SESSION["useruid"];
     $arrival = htmlspecialchars($_POST["arrival"]);
     $departure = htmlspecialchars($_POST["departure"]);
     $breakfast = htmlspecialchars($_POST["breakfast"]);
@@ -23,7 +21,7 @@ if(isset($_POST["submit"])){
         exit();
     }
 
-    createReservation($conn, $userUid, $arrival, $departure, $breakfast, $parking, $pet);
+    createReservation($conn, $arrival, $departure, $breakfast, $parking, $pet);
 }
 elseif(isset($_POST["cancelRes"])){
     require_once 'functions.inc.php';

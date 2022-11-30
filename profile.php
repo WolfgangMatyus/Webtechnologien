@@ -30,20 +30,12 @@
         <div class="card-body">
             <form action="included/upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload:
-                <input type="file" name="myfile" accept="image/png, image/gif, image/jpeg" id="fileToUpload">
+                <input type="file" name="myfile" id="fileToUpload">
                 <input type="submit" value="Upload Image" name="submit">
             </form>
         </div>
     </div>
-</div>';
-
-    if((isset($_GET["error"]) && $_GET["error"]=="no")){
-        echo '<div class="container d-flex justify-content-center text-success">
-        <h2>Image successfully uploaded.</h2>
-    </div>';
-    }
-
-echo '
+</div>
 <hr>
 <div class="container d-flex" >
     <div class="container d-flex justify-content-center">
@@ -53,6 +45,11 @@ echo '
             </div>
             <div class="card-body">
                 <table>
+                <tr>
+                    <div class="card-img-top-profile">
+                        <img src="Pics/avatar.jpg" class="card-img-top-profile" alt="Profile Picture" style="width: 100px; height: 100px;">
+                    </div>
+                <tr>
                 <tr>
                     <th>
                         Gender:
@@ -104,62 +101,62 @@ echo '
     <?php
         if(isset($_GET["error"]) && $_GET["error"]=="none"){
             echo '
-    <div class="container d-flex justify-content-center">
-        <div class="card border-primary" >
-            <div class="card-header bg-transparent border-primary">
-                <h5 class="card-title">Enter the data you want to change</h5>
-            </div>
-            <div class="card-body">
-                <form action="/included/change.inc.php" method="POST">
+        <div class="container d-flex justify-content-center">
+            <div class="card border-primary" >
+                <div class="card-header bg-transparent border-primary">
+                    <h5 class="card-title">Enter the data you want to change</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/included/change.inc.php" method="POST">
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
-                        <label class="form-check-label" for="inlineRadio1">Male*</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female">
-                        <label class="form-check-label" for="inlineRadio2">Female*</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Other">
-                        <label class="form-check-label" for="inlineRadio2">Other*</label>
-                    </div>
-
-                    <div class="input-group flex-nowrap">
-                        <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="uid">
-                    </div>
-
-                    <div class="input-group flex-nowrap">
-                        <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
-                        <input type="text" class="form-control" placeholder="Full Name" aria-label="Username" aria-describedby="addon-wrapping" name="name">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                        <div>
-                            <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
+                            <label class="form-check-label" for="inlineRadio1">Male*</label>
                         </div>
-                    </div>
-                </form>
-                <div class="col">
-                    <form action="../changepw.php" method="POST">
-                            <button type="submit "class="btn btn-primary" name="changePw">Change Password</button>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female">
+                            <label class="form-check-label" for="inlineRadio2">Female*</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Other">
+                            <label class="form-check-label" for="inlineRadio2">Other*</label>
+                        </div>
+
+                        <div class="input-group flex-nowrap">
+                            <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="uid">
+                        </div>
+
+                        <div class="input-group flex-nowrap">
+                            <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
+                            <input type="text" class="form-control" placeholder="Full Name" aria-label="Username" aria-describedby="addon-wrapping" name="name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <div>
+                                <button type="submit" class="btn btn-primary" name="submitchange">Change Data</button>
+                            </div>
+                        </div>
                     </form>
+                    <div class="col">
+                        <form action="../changepw.php" method="POST">
+                                <button type="submit "class="btn btn-primary" name="changePw">Change Password</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>';}
-}
-else echo 'Please log in for possible profile changes';
-?>
+    }
+        else echo 'Please log in for possible profile changes';
+    ?>
 <?php
     include_once 'footer.php';
 ?>
