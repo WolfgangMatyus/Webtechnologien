@@ -36,8 +36,8 @@
                 </div>
             </div>
         </div>
-      <hr>
-        <div class="container d-flex" >
+      
+        <div class="container_1 d-flex" >
             <div class="container justify-content-center">
                 <div class="card border-primary ">
                     <div class="card-header bg-transparent border-primary">
@@ -99,7 +99,8 @@
                         ?>
                         <?php
                         echo '
-                </div>                
+                </div>
+                <hr>                
             </div>
             <div class="container">
                 '?><?php
@@ -170,16 +171,7 @@
                     </div>
                 </div>
             </div>
-    </div>
-    <div class="container">
-                '?><?php
-                    require_once 'included/dbh.inc.php';
-                    require_once 'included/functions.inc.php';
-                    getReservations($conn, $_SESSION["useruid"])
-                ?>
-                <?php
-                        echo '
-                </div>';}
+    </div>';}
         }
             else echo 'Please log in for possible profile changes';
         ?>
