@@ -56,20 +56,3 @@ a.nav-link {
 .impressum {
   color: azure;
 }
-
-.resTable {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-tr.resTable > td {
-  border: 1px solid black;
-  text-align: center;
-  border-collapse: collapse;
-}
-
-tr.resTable > th {
-  border: 2px solid black;
-  text-align: center;
-  border-collapse: collapse;
-}
