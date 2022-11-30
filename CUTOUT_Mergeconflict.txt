@@ -1,0 +1,31 @@
+### Upload.php ###
+    /*
+    if (!in_array($extension, ['PNG','png', 'jpeg', 'jpg'])) {
+=======
+    if (!in_array($extension, ['png', 'jpeg', 'jpg'])) {
+>>>>>>> develop
+        echo "You file extension must be .png, .jpeg or .jpg";
+    } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1Megabyte
+        echo "File too large!";
+    } else {
+        // move the uploaded (temporary) file to the specified destination
+        if (move_uploaded_file($file, $destination)) {
+            $sql = "INSERT INTO files (name, size, downloads) VALUES ('$filename', $size, 0)";
+            if (mysqli_query($conn, $sql)) {
+                header("location: ../profile.php");
+                echo "File uploaded successfully";
+            }
+        } else {
+            echo "Failed to upload file.";
+        }
+    }
+    
+    //Your Image
+$imgSrc = "image.jpg";
+*/
+
+### nav.php ###
+
+        if(isset($_SESSION["useruid"])) {
+          echo "Welcome <img src='Pics/avatar.jpg' class='card-img-top-profile' alt='Profile Picture' style='width: 50px; height: 50px;'> "
+          . $_SESSION["useruid"];

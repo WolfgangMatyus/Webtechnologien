@@ -18,7 +18,6 @@
                     <br>
                     Enjoy your stay! :)
                     </div>';
-            exit;
         }
         elseif(isset($_GET["error"]) && $_GET["error"]!="none"){
             echo '<div class="container d-flex justify-content-center text-danger fw-bold h3">';
