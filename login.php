@@ -3,14 +3,16 @@
 ?>
 <div class="wrapper">
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row justify-content-between">
+            <div class="col-4">
                 <h1>Login</h1>
-                <hr>
             </div>
+            <div class="col-4">
+                <img src="Pics/DiveIn.jpg" class="rounded float-end" alt="Dive In!" width="100" height="100">
+            </div>
+            <hr>
         </div>
     </div>
-
 
     <?php
 
@@ -33,52 +35,48 @@
         }
         echo '</div>';
     ?>
+    
+            <div class="container d-flex justify-content-center">
+                <div class="card border-primary">
+                    <div class="card-header bg-transparent border-primary">
+                        <h4>Log in below!</h4>
+                    </div>
+                    <form action="/included/login.inc.php" method="POST">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Log In to your Personal Profile!</h5>
+                            <p class="card-text">Please enter your credentials to log in!</p>
+                            <p class="card-text">* Mandatory</p>
+                                
+                                <div class="mb-3">
+                                    <label for="InputEmail1" class="form-label">Email address*</label>
+                                    <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" name="uid">                            
+                                    <div id="emailHelp" class="form-text">
+                                        Your email will never be share with anyone else.
+                                    </div>
+                                </div>
 
+                                <div class="mb-3">
+                                    <label for="InputPassword1" class="form-label">Password*</label>
+                                    <input type="password" class="form-control" id="InputPassword1" name="pwd">
+                                </div>
 
-    <div class="container d-flex justify-content-center">
-        <div class="card border-primary">
-            <div class="card-header bg-transparent border-primary">
-                <h4>Log in below!</h4>
-            </div>
-
-            <form action="/included/login.inc.php" method="POST">
-                <div class="card-body text-primary">
-                    <h5 class="card-title">Log In to your Personal Profile!</h5>
-                    <p class="card-text">Please enter your credentials to log in!</p>
-                    <p class="card-text">* Mandatory</p>
-                    
-                        <div class="mb-3">
-                            <label for="InputEmail1" class="form-label">Email address*</label>
-                            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" name="uid">                            
-                            <div id="emailHelp" class="form-text">
-                                Your email will never be share with anyone else.
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="Check1">
+                                    <label class="form-check-label" for="Check1">Remember Login</label>
+                                </div>          
+                        </div>
+                        <div class="card-footer bg-transparent border-primary">                            
+                            <div class="btn btn-primary btn-lg">
+                                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                            </div>
+                            <div class="btn btn-primary btn-lg">
+                                <button type="submit"class="btn btn-primary" name="changePw">Change Password</button>
                             </div>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="InputPassword1" class="form-label">Password*</label>
-                            <input type="password" class="form-control" id="InputPassword1" name="pwd">
-                        </div>
-
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="Check1">
-                            <label class="form-check-label" for="Check1">Remember Login</label>
-                        </div>          
+                    </form>
                 </div>
-            
-                
+            </div>
 
-                <div class="card-footer bg-transparent border-primary">                            
-                    <div class="btn btn-primary btn-lg">
-                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                    </div>
-                    <div class="btn btn-primary btn-lg">
-                        <button type="submit"class="btn btn-primary" name="changePw">Change Password</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
 </div>
 
 <?php
