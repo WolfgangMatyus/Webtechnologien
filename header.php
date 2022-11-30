@@ -23,15 +23,17 @@
     <div class="container-fluid justify-content-center" id="header">
         <div>
             <figure class="text-center">
-                <a class="navbar-brand col-md-2" href="index.php">
-                    <?php
-                    if(isset($_SESSION["useruid"])) {
-                        echo "Welcome <img src='Pics/avatar.jpg' class='card-img-top-profile' alt='Profile Picture' style='width: 50px; height: 50px;'> "
-                        . $_SESSION["useruid"];
+            <a class="navbar-brand col-md-2" href="index.php">
+                <?php
+                    if(isset($_SESSION["useruid"]) && isset($_SESSION["thumb_path"])) {
+                    echo "Welcome " . $_SESSION["useruid"] . " " . '<img src="included/' . $_SESSION["thumb_path"] . '">';
+                    }
+                    elseif (isset($_SESSION["useruid"])){
+                    echo "Welcome " . $_SESSION["useruid"];
                     }
                     else echo "WEBHOTEL";
-                    ?>
-                </a>
+                ?>
+            </a>
             </figure>
             <hr>
         </div>

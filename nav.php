@@ -1,21 +1,9 @@
 
 <div class="container-fluid">
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand col-md-2" href="index.php">
-      <?php
-        if(isset($_SESSION["useruid"]) && isset($_SESSION["thumb_path"])) {
-          echo "Welcome " . $_SESSION["useruid"] . " " . '<img src="included/' . $_SESSION["thumb_path"] . '">';
-        }
-        elseif (isset($_SESSION["useruid"])){
-          echo "Welcome " . $_SESSION["useruid"];
-        }
-        else echo "WEBHOTEL";
-      ?>
-    </a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav col-md-4.5 ms-md-auto mb-2 mb-lg-0 justify-content-center">
@@ -69,7 +57,7 @@
           ?>
         </ul> 
       </div>
-    </nav>
+  </nav>
 </div> 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
