@@ -2,12 +2,15 @@
     include 'header.php';
 ?>
 <div class="wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col">
+  <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-4">
                 <h1>Reservation</h1>
-                <hr>
+             </div>
+            <div class="col-4">
+                <img src="Pics/diningroom.jpg" class="rounded float-end" alt="Dive In!" width="100" height="100">
             </div>
+            <hr>
         </div>
     </div>
 
@@ -34,7 +37,7 @@
             echo '</div>';
         ?>
 
-    <div class="container d-flex justify-content-center"">
+    <div class="container justify-content-center"">
         <div class="card border-primary ">
             <div class="card-header bg-transparent border-primary">
                 <h4>Book your prefered room!</h4>

@@ -25,8 +25,8 @@
             <figure class="text-center">
             <a class="navbar-brand col-md-2" href="index.php">
                 <?php
-                    if(isset($_SESSION["useruid"]) && isset($_SESSION["thumb_path"])) {
-                    echo "Welcome " . $_SESSION["useruid"] . " " . '<img src="included/' . $_SESSION["thumb_path"] . '">';
+                    if(isset($_SESSION["username"]) && isset($_SESSION["thumb_path"])) {
+                        echo "Welcome <img src='included/" . $_SESSION['thumb_path'] . " '> " . $_SESSION["username"];
                     }
                     elseif (isset($_SESSION["useruid"])){
                     echo "Welcome " . $_SESSION["useruid"];

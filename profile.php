@@ -3,21 +3,16 @@
 ?>
 <div class="wrapper">
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row justify-content-between">
+            <div class="col-4">
                 <h1>Profile</h1>
-                <hr>
+             </div>
+            <div class="col-4">
+                <img src="Pics/onewaterfrontroom.jpg" class="rounded float-end" alt="Dive In!" width="100" height="100">
             </div>
+            <hr>
         </div>
     </div>
-
-<div class="container">
-    <?php
-        require_once 'included/dbh.inc.php';
-        require_once 'included/functions.inc.php';
-        getReservations($conn, $_SESSION["useruid"])
-    ?>
-</div>
 
 <?php
     if(isset($_SESSION["useruid"])){
@@ -43,7 +38,7 @@
         </div>
       <hr>
         <div class="container d-flex" >
-            <div class="container d-flex justify-content-center">
+            <div class="container justify-content-center">
                 <div class="card border-primary ">
                     <div class="card-header bg-transparent border-primary">
                         <h5 class="card-title">Your current data</h5>
@@ -104,9 +99,17 @@
                         ?>
                         <?php
                         echo '
-
-                </div>
-            </div>';
+                </div>                
+            </div>
+            <div class="container">
+                '?><?php
+                    require_once 'included/dbh.inc.php';
+                    require_once 'included/functions.inc.php';
+                    getReservations($conn, $_SESSION["useruid"])
+                ?>
+                <?php
+                        echo '
+                </div>';
         ?>
         <?php
             if(isset($_GET["error"]) && $_GET["error"]=="none"){
@@ -167,7 +170,16 @@
                     </div>
                 </div>
             </div>
-    </div>';}
+    </div>
+    <div class="container">
+                '?><?php
+                    require_once 'included/dbh.inc.php';
+                    require_once 'included/functions.inc.php';
+                    getReservations($conn, $_SESSION["useruid"])
+                ?>
+                <?php
+                        echo '
+                </div>';}
         }
             else echo 'Please log in for possible profile changes';
         ?>
