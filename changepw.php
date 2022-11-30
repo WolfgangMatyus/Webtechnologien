@@ -32,44 +32,42 @@
         }
         echo '</div>';
     ?>
-
-
+    
 <div class="container d-flex justify-content-center" style="padding: 20px;">
     <div class="card border-primary " style="max-width: 30rem;">
         <div class="card-header bg-transparent border-primary"><h2>Password Change</h2></div>
-            <div class="card-body text-success">
-                <h5 class="card-title">Change your password</h5>
-                <p class="card-text">Please enter your current password and set up a new one, than confirm it!</p>
+            <form action="/included/changepw.inc.php" method="POST">    
+                <div class="card-body text-success">
+                    <h5 class="card-title">Change your password</h5>
+                    <p class="card-text">Please enter your current password and set up a new one, than confirm it!</p>
+
+                        <div class="mb-3">
+                            <label for="Username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="Username" name="username" placeholder="Username">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="currentPW" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPW" name="currentpwd" placeholder="Current Password">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="newPw" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPw" name="newpwd" placeholder="New Password">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirmPw" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPw" name="confirmpwd" placeholder="Confirm New Password">
+                        </div>                    
+                </div>
                 
-                <form action="/included/changepw.inc.php" method="POST">
-                 
-                    <div class="mb-3">
-                        <label for="Username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="Username" name="username" placeholder="Username">
+                <div class="card-footer bg-transparent border-primary">
+                    <div class="btn btn-primary btn-lg">
+                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                     </div>
-
-                    <div class="mb-3">
-                        <label for="currentPW" class="form-label">Current Password</label>
-                        <input type="password" class="form-control" id="currentPW" name="currentpwd" placeholder="Current Password">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="newPw" class="form-label">New Password</label>
-                        <input type="password" class="form-control" id="newPw" name="newpwd" placeholder="New Password">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="confirmPw" class="form-label">Confirm New Password</label>
-                        <input type="password" class="form-control" id="confirmPw" name="confirmpwd" placeholder="Confirm New Password">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                </form> 
-            </div>
-            
-            <div class="card-footer bg-transparent border-primary">
-                Thank You! We wish you a nice stay!;
-            </div>
+                </div>
+            </form> 
         </div>
     </div>
 </div>
