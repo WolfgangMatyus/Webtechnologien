@@ -1,94 +1,130 @@
 /* .=class, #=id,  'name'=tag :=effect*/
 
-body {
-    min-width: 375px;
-}
+/*ALL Pages*/
+    body {
+        min-width: 375px;
+        color: azure;
+    }
 
-div.wrapper{
-    background-color:hsla(200, 100%, 80%, 0.603);
-    padding: 10px;
-    margin: 10px;
-}
+    div#header{
+        background-image: url(../Pics/waterbubbles.jpg);
+        color: hsla(244, 80%, 50%);
+    }
 
-img.card-img-top-profile{
-    width: 100px;
-    height: 100px;
-}
+    div#header:hover{
+        background-image: url();
+        background-color:hsl(244, 80%, 50%);
+        color: azure;
+    }
 
-nav{
-    margin: 0px 10px;
-    background-color:hsl(244, 80%, 50%);
-}
+    hr.headerline{
+        margin: 1px;
+    }
 
-.navbar {
-    margin: 0;
-    color: azure;
-    background-color:hsl(244, 80%, 50%);
-}
-  
-.navbar:hover {
-  padding: 10px 10px;
-}
+    div.wrapper{
+        background-color:hsla(200, 100%, 80%, 0.603);
+        padding: 10px;
+        margin: 10px;
+    }
 
-#navbarSupportedContent{
-    flex-grow: 0.5;
-    color: azure;   
-}
+    .navbarFooter {
+        margin: 0;
+        background-color:hsl(244, 80%, 50%);
+    }
 
-a.nav-link{
-    font-family: Arial, Helvetica, sans-serif;
-    color: azure;
-    margin: 0px 20px 0px 20px;
-}
+    #navbarSupportedContent{
+        flex-grow: 0.5;  
+    }
 
-a.nav-link.active{
-    font-family: Arial, Helvetica, sans-serif;
-    color: azure;
-    margin: 0px 20px 0px 20px;
-}
+    a.navbar-brand{
+        margin-top: 15px;
+        background-color:hsla(200, 100%, 80%, 0.603);
+        border: 1px solid;
+        border-radius: 50px;
+        padding: 15px;
+    }
 
-.nav-item:hover{
-    /*background-color:hsl(200, 100%, 80%);*/
-    font-size: 20px;
-    color: azure;
-}
+    a.nav-link{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px 20px 0px 20px;
+        color: hsla(200, 100%, 80%, 0.603);
+    }
 
-.jumbotron{
-    color: azure;
-    background-color:rgb(63, 98, 168);
-    padding: 20px 20px;
-}
+    a.nav-link:hover{
+        color: azure;
+        background-color:hsla(200, 100%, 80%, 0.603);
+    }
 
-.jumbotron:hover{
-    color: azure;   
-    padding: 20px 20px;
-    background-color:hsl(244, 80%, 50%);
-}
+    .nav-item:hover{
+        font-size: 20px;
+    }
 
-.container {
-  padding: 20px;
-  max-width: 60rem;
-}
+    .container {
+        padding: 20px;
+        max-width: 60rem;
+    }
 
-h4.guestbook{
-    font-family: cursive;
-    text-align: center;
-}
-.panel-body{
-    text-align: center;
-    color: azure;
-    background-color:rgb(63, 98, 168);
-    padding: 20px;
+    .footer-item {
+        padding: 0px 10px;
+    }
 
-.footer-item {
-  padding: 0px 10px;
-}
+/*ALL Pages -- ENDE --*/
 
-.impressum {
-  color: azure;
-}
 
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    width: 500px;
-    margin: auto;
-}
+/*HOME*/
+    .jumbotron{
+        color: azure;
+        background-color:rgb(63, 98, 168);
+        padding: 20px 20px;
+    }
+
+    .jumbotron:hover{
+        color: azure;   
+        padding: 20px 20px;
+        background-color:hsl(244, 80%, 50%);
+    }
+
+    .impressum {
+        color: azure;
+    }
+/*HOME -- ENDE --*/
+
+/*LOG IN*/
+
+/*LOG IN -- ENDE --*/
+
+/*SIGN UP*/
+
+/*SIGN UP -- ENDE --*/
+
+/*GUESTBOOK*/
+    h4.guestbook{
+        font-family: cursive;
+        text-align: center;
+    }
+
+    .panel-body{
+        text-align: center;
+        color: azure;
+        background-color:rgb(63, 98, 168);
+        padding: 20px;
+    }
+
+    .panel-body:hover{
+        background-color:hsl(244, 80%, 50%);
+    }
+/*GUESTBOOK -- ENDE --*/
+
+/*PROFILE*/
+    img.card-img-top-profile{
+        width: 100px;
+        height: 100px;
+    }
+/*PROFILE -- ENDE --*/
+
+/*SET RESERVATION*/
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+        width: 500px;
+        margin: auto;
+    }
+/*SET RESERVATION -- ENDE --*/

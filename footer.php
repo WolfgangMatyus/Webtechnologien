@@ -2,7 +2,7 @@
 
     <div style="height: 100px"></div>  
    
-    <nav class="navbar fixed-bottom">
+    <nav class="navbarFooter fixed-bottom">
         <div class="container-fluid text-center d-flex justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="footer-item">

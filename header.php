@@ -21,7 +21,7 @@
 
 <header>
     <div class="container-fluid justify-content-center" id="header">
-        <div>
+        <h1 class="head">
             <figure class="text-center">
             <a class="navbar-brand col-md-2" href="index.php">
                 <?php
@@ -31,12 +31,12 @@
                     elseif (isset($_SESSION["useruid"])){
                     echo "Welcome " . $_SESSION["useruid"];
                     }
-                    else echo "WEBHOTEL";
+                    else echo "AQUARIUM";
                 ?>
             </a>
             </figure>
-            <hr>
-        </div>
+            <hr class="headerline">
+                </h1>
             <?php
                 include 'nav.php';
             ?>
