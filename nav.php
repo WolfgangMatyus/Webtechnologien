@@ -7,7 +7,7 @@
           echo "Welcome " . $_SESSION["useruid"] . " " . '<img src="included/' . $_SESSION["thumb_path"] . '">';
         }
         elseif (isset($_SESSION["useruid"])){
-          echo "Welcome " . $_SESSION["useruid"]
+          echo "Welcome " . $_SESSION["useruid"];
         }
         else echo "WEBHOTEL";
       ?>
