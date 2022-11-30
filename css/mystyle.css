@@ -1,47 +1,68 @@
 /* .=class, #=id,  'name'=tag :=effect*/
+
 body {
-  background-color: rgb(0, 183, 255);
+    min-width: 375px;
 }
 
-.jumbotron {
-  color: azure;
-  background-color: hsla(200, 100%, 80%, 0.603);
+div.wrapper{
+    background-color:hsla(200, 100%, 80%, 0.603);
+    padding: 10px;
+    margin: 10px;
 }
 
-nav {
-  background-color: hsl(244, 89%, 51%);
+img.card-img-top-profile{
+    width: 100px;
+    height: 100px;
 }
 
-.jumbotron:hover {
-  color: azure;
-  padding: 20px 20px;
-  background-color: hsl(244, 89%, 51%);
+nav{
+    margin: 0px 10px;
+    background-color:hsl(244, 80%, 50%);
 }
 
-#navbarSupportedContent {
-  text-align: center;
-  flex-grow: 0.5;
-  color: azure;
-  padding: 10px 10px;
+.navbar {
+    margin: 0;
+    color: azure;
+    background-color:hsl(244, 80%, 50%);
 }
-
+  
 .navbar:hover {
   padding: 10px 10px;
 }
 
-a.nav-link {
-  font-family: Arial, Helvetica, sans-serif;
-  color: azure;
-  margin: 0px 20px 0px 20px;
-}
-.nav-item:hover {
-  background-color: hsl(202, 71%, 48%);
-  text-size-adjust: 500px;
+#navbarSupportedContent{
+    flex-grow: 0.5;
+    color: azure;   
 }
 
-.navbar {
-  color: azure;
-  background-color: hsl(244, 89%, 51%);
+a.nav-link{
+    font-family: Arial, Helvetica, sans-serif;
+    color: azure;
+    margin: 0px 20px 0px 20px;
+}
+
+a.nav-link.active{
+    font-family: Arial, Helvetica, sans-serif;
+    color: azure;
+    margin: 0px 20px 0px 20px;
+}
+
+.nav-item:hover{
+    /*background-color:hsl(200, 100%, 80%);*/
+    font-size: 20px;
+    color: azure;
+}
+
+.jumbotron{
+    color: azure;
+    background-color:rgb(63, 98, 168);
+    padding: 20px 20px;
+}
+
+.jumbotron:hover{
+    color: azure;   
+    padding: 20px 20px;
+    background-color:hsl(244, 80%, 50%);
 }
 
 .container {
@@ -49,10 +70,25 @@ a.nav-link {
   max-width: 60rem;
 }
 
+h4.guestbook{
+    font-family: cursive;
+    text-align: center;
+}
+.panel-body{
+    text-align: center;
+    color: azure;
+    background-color:rgb(63, 98, 168);
+    padding: 20px;
+
 .footer-item {
   padding: 0px 10px;
 }
 
 .impressum {
   color: azure;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 500px;
+    margin: auto;
 }

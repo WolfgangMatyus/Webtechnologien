@@ -22,15 +22,16 @@ if(isset($_POST["submit"])){
 
 $sql = "SELECT *  FROM comments ORDER BY comments_id desc";
 $res = mysqli_query($conn, $sql);
-echo '<table>';
+echo '';
 for($i=0; $i<3; $i++)
 {
 $dsatz=mysqli_fetch_assoc($res);
 $username = $dsatz["comments_uid"];
 $comment = $dsatz["comments_comment"];
+
 if(isset($_SESSION["thumb_path"])){echo '
-<tr><td> User: '.$username. " " . '<img src="included/' . $_SESSION["thumb_path"] . '"><hr> Comment: <br>'.$comment.'<hr><br></td>';}
+<tr><td> User: <br>'.$username. " " . '<img src="included/' . $_SESSION["thumb_path"] . '"><hr> Comment: <br>'.$comment.'<hr><br></td>';}
 else echo '
-<tr><td> User: '.$username.'<hr> Comment: <br>'.$comment.'<hr><br></td>';
+<tr><td> User: <br>'.$username.'<hr> Comment: <br>'.$comment.'<hr><br></td>';
 };
-echo '</table>';                    
+echo '';                    
