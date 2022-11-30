@@ -3,11 +3,14 @@
 ?>
 <div class="wrapper">
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row justify-content-between">
+            <div class="col-4">
                 <h1>Impressum</h1>
-                <hr>
+             </div>
+            <div class="col-4">
+                <img src="Pics/outsideview.jpg" class="rounded float-end" alt="Dive In!" width="100" height="100">
             </div>
+            <hr>
         </div>
     </div>
     <div class="container">

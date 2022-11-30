@@ -3,13 +3,16 @@
 ?>
 <div class="wrapper">
   <div class="container">
-      <div clasS="row">
-          <div class="col">
-              <h1>FAQ's</h1>
-              <hr>
-          </div>
-      </div>
-  </div>
+        <div class="row justify-content-between">
+            <div class="col-4">
+                <h1>FAQ's</h1>
+             </div>
+            <div class="col-4">
+                <img src="Pics/sharkroom.jpg" class="rounded float-end" alt="Dive In!" width="100" height="100">
+            </div>
+            <hr>
+        </div>
+    </div>
   <div class="container" style="padding-top: 20px";>
   <div class="accordion accordion-flush" id="accordionFlushExample">
     <div class="accordion-item">

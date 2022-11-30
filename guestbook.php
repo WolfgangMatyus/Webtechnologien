@@ -3,13 +3,16 @@
 ?>
 <div class="wrapper">
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Guestbook</h1>
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <h1>Guestbook</h1>
+                </div>
+                <div class="col-4">
+                    <img src="Pics/Aquakino.jpg" class="rounded float-end" alt="Dive In!" width="100" height="100">
+                </div>
                 <hr>
             </div>
         </div>
-    </div>
 
 
     <?php
