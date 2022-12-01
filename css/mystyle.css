@@ -1,0 +1,137 @@
+/* .=class, #=id,  'name'=tag :=effect*/
+
+/*ALL Pages*/
+    body {
+        min-width: 375px;
+        color: azure;
+    }
+
+    div#header{
+        background-image: url(../Pics/waterbubbles.jpg);
+        color: hsla(244, 80%, 50%);
+    }
+
+    hr.headerline{
+        margin: 1px;
+    }
+
+    div.wrapper{
+        background-color:hsla(200, 100%, 80%, 0.603);
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .navbarFooter {
+        margin: 0;
+        background-color:hsl(244, 80%, 50%);
+    }
+
+    #navbarSupportedContent{
+        flex-grow: 0.5;  
+    }
+    .navbar-toggler{
+        color:azure;
+    }
+    a.navbar-brand{
+        margin-top: 15px;
+        background-color:hsla(200, 100%, 80%, 0.603);
+        border: 1px solid;
+        border-radius: 50px;
+        padding: 15px;
+    }
+
+    a.nav-item{
+    text-align: center;
+    }
+
+    a.nav-link{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px 20px 0px 20px;
+        color: hsl(244, 80%, 50%);
+        background-color:hsla(200, 100%, 80%, 0.8);
+        border: 1px solid;
+        border-radius: 50px;
+    }
+
+    a.nav-link:hover{
+        color: azure;
+    }
+
+    a.nav-link.active{
+        color: azure !important;
+        font-size: 20px !important;
+    }
+
+    .nav-item:hover{
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 60rem;
+    }
+
+    .footer-item {
+        padding: 0px 10px;
+    }
+
+/*ALL Pages -- ENDE --*/
+
+
+/*HOME*/
+    .jumbotron{
+        color: azure;
+        background-color:rgb(63, 98, 168);
+        padding: 20px 20px;
+    }
+
+    .jumbotron:hover{
+        color: azure;   
+        padding: 20px 20px;
+        background-color:hsl(244, 80%, 50%);
+    }
+
+    .impressum {
+        color: azure;
+    }
+/*HOME -- ENDE --*/
+
+/*LOG IN*/
+
+/*LOG IN -- ENDE --*/
+
+/*SIGN UP*/
+
+/*SIGN UP -- ENDE --*/
+
+/*GUESTBOOK*/
+    h4.guestbook{
+        font-family: cursive;
+        text-align: center;
+    }
+
+    .panel-body{
+        text-align: center;
+        color: azure;
+        background-color:rgb(63, 98, 168);
+        padding: 20px;
+    }
+
+    .panel-body:hover{
+        background-color:hsl(244, 80%, 50%);
+    }
+/*GUESTBOOK -- ENDE --*/
+
+/*PROFILE*/
+    img.card-img-top-profile{
+        width: 100px;
+        height: 100px;
+    }
+/*PROFILE -- ENDE --*/
+
+/*SET RESERVATION*/
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+        width: 500px;
+        margin: auto;
+    }
+/*SET RESERVATION -- ENDE --*/
