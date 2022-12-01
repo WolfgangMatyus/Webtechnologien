@@ -175,7 +175,8 @@
         }
             else echo 'Please log in for possible profile changes';
         ?>
-        <div class="container">
+        <div class="container justify-content-center">
+            <h5 class="">YOUR RESERVATIONs</h5>
             <?php
                 require_once 'included/dbh.inc.php';
                 require_once 'included/functions.inc.php';
