@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 27. Nov 2022 um 23:09
--- Server-Version: 10.4.25-MariaDB
--- PHP-Version: 8.1.10
+-- Erstellungszeit: 01. Dez 2022 um 01:27
+-- Server-Version: 10.1.29-MariaDB
+-- PHP-Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,15 +40,6 @@ CREATE TABLE `reservations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Daten für Tabelle `reservations`
---
-
-INSERT INTO `reservations` (`reservationsId`, `reservationsArrival`, `reservationsDeparture`, `reservationsBreakfast`, `reservationsParking`, `reservationsPet`, `reservationsStatus`, `reservationsUid`) VALUES
-(1, '2022-11-17', '2022-11-19', 'yes', 'no', '', '', ''),
-(2, '2022-11-02', '2022-11-26', 'yes', 'no', 'Doggo', 'new', ''),
-(3, '2022-11-10', '2022-11-25', 'no', 'yes', 'Elephant', 'new', '');
-
---
 -- Indizes der exportierten Tabellen
 --
 
@@ -65,7 +57,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT für Tabelle `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservationsId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `reservationsId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

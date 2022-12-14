@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 27. Nov 2022 um 23:07
--- Server-Version: 10.4.25-MariaDB
--- PHP-Version: 8.1.10
+-- Erstellungszeit: 01. Dez 2022 um 01:27
+-- Server-Version: 10.1.29-MariaDB
+-- PHP-Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -40,15 +41,8 @@ CREATE TABLE `files` (
 --
 
 INSERT INTO `files` (`id`, `name`, `size`, `downloads`, `content`) VALUES
-(2, 'BankApp.png', 49276, 0, ''),
-(3, 'midtermtest Class diagram.png', 34414, 0, ''),
-(4, 'midtermtest Class diagram.png', 34414, 0, ''),
-(5, 'Use-Cases TalentHunter GesmbH.png', 158059, 0, ''),
-(6, 'Hochschule.png', 21633, 0, ''),
-(7, 'Travel-Small-Axe-icon.png', 2647, 0, ''),
-(8, 'Travel-Small-Axe-icon.png', 2647, 0, ''),
-(9, 'FlugBuchung2.png', 54423, 0, ''),
-(10, 'Travel-Small-Axe-icon.png', 2647, 0, '');
+(10, 'Travel-Small-Axe-icon.png', 2647, 0, ''),
+(11, 'avatar.jpg', 67637, 0, '');
 
 --
 -- Indizes der exportierten Tabellen
@@ -68,7 +62,7 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT für Tabelle `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

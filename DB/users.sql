@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 27. Nov 2022 um 23:06
--- Server-Version: 10.4.25-MariaDB
--- PHP-Version: 8.1.10
+-- Erstellungszeit: 01. Dez 2022 um 01:27
+-- Server-Version: 10.1.29-MariaDB
+-- PHP-Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -41,16 +42,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`usersId`, `usersUid`, `usersPwd`, `usersEmail`, `usersName`, `usersGender`) VALUES
-(1, 'adf', '$2y$10$dq21hII2O9/xQlgUH1bcwOPrV4.lG664z0qewK9jpFY3F96wFSBZ2', '', '', ''),
-(2, 'kul', '$2y$10$puANUm0HB/3zM.LJUZ.w2eLYmDEQrZPy9Jf8OH7Ikn3uTsJQGF73O', 'kul@pet.at', 'kul pet', ''),
-(3, 'lena', '$2y$10$q35VqxTkrrJ6sxi0H2mmu.IT/CUJZnjl8hvtYkAJKZeSx9DA49oKe', 'lena@coufal.at', 'lena coufal', ''),
-(4, 'mal', '$2y$10$pO3sCqqTABikEW8A3oBkruoX27Tislznclqb.0EAxmS7MYP3dpRYS', 'mal@so.at', 'so', 'option3'),
-(5, 'kat', '$2y$10$Q1AEl6WXOtO5o9RpXbBCderJIxhoPiaMJKZ1KkuvYaYvtQN3k7cN6', 'kat@arin.at', 'arin', 'option2'),
-(6, 'hu', '$2y$10$XEN5fGwZKAZ.fySZy8I/1u5oCc/WlHpGbQYNlVZZDmBOimf8oX6La', 'hu@hu.at', 'huhu', 'Female'),
-(7, 'klo', '$2y$10$qz0TSMo75pcGNVsFaKe4dOY9NXELwifGGu0p7JABcHag4nblsudoK', 'buerste@klo.at', 'bürste', 'Other'),
-(8, 'woif', '$2y$10$h7pEPAkz83wJdpaK50bgkeLYIk.Xc/An9hbxBXdKlBKxscIXQF0YO', 'wo@hin.com', 'wolfi', 'Male'),
-(9, 'ui', '$2y$10$kQ6EZxNdBA.b0hiSUqnIGOgBhFcfDmJP1HcMoyQuOhzr2XhOumGkq', 'ui@ui.at', 'uiui', 'Male'),
-(10, 'av', '$2y$10$v/jFuwdb/qajXNnjSlM1z.KuaYsA9v3jUw3PSBZsCHtPiPeqFF/iG', 'dsaf@kl.at', 'adsf', 'Female');
+(12, 'guest', '$2y$10$JI7/VrzFnjcTf9/gnAWG1eT3Uq4WcUeUZCdNgcyC7A8Zuv/9Gq5yW', 'guest@book.at', 'book guest', 'Male'),
+(13, 'WolfWer?', '$2y$10$JJ9ct2Xlf7o0UDoYTDtjSejyxoDDm9jR9NC8YbM049rafNa23rWQG', 'wi21b055@technikum-wien.at', ' Wolfgang Matyus', 'Male'),
+(17, 'guest1', '$2y$10$812lYvw4LaX5jh6NmPh6Be47v2YM3QYgTc1S1t9bUNVJmas.1hyz2', 'guest1@hotel.at', 'Hotel Gast', 'Male');
 
 --
 -- Indizes der exportierten Tabellen
@@ -70,7 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
