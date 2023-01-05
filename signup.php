@@ -79,8 +79,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address*</label>
-                        <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                        <label for="inputEmail1" class="form-label">Email address*</label>
+                        <input type="email" class="form-control" placeholder="User@domain.cc" id="inputEmail1" aria-describedby="emailHelp" name="email">
                         
                         <div id="emailHelp" class="form-text">
                             We'll never share your email with anyone else.
@@ -88,13 +88,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password*</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="pwd">
+                        <label for="inputPassword1" class="form-label">Password*</label>
+                        <input type="password" class="form-control" id="inputPassword1" name="pwd">
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputPassword2" class="form-label">Password confirmation*</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="pwdrepeat">
+                        <label for="inputPassword2" class="form-label">Password confirmation*</label>
+                        <input type="password" class="form-control" id="inputPassword1" name="pwdrepeat">
                     </div>
                     <div class="btn btn-primary btn-lg">
                         <button type="submit" class="btn btn-primary" name="submit">Create Account</button>

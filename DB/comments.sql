@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 28. Nov 2022 um 20:48
+-- Erstellungszeit: 01. Dez 2022 um 01:27
 -- Server-Version: 10.1.29-MariaDB
 -- PHP-Version: 7.2.0
 
@@ -41,8 +41,10 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`comments_id`, `comments_uid`, `comments_comment`) VALUES
 (1, 'book guest', 'Hallo!'),
 (2, 'Wolfgang Matyus', 'this is a longer comment to test the length of the field and how it behaves in terms of responsivenes. and again this is a longer comment to test the length of the field and how it behaves in terms of responsivenes. and againthis is a longer comment to test the length of the field and how it behaves in terms of responsivenes. and againthis is a longer comment to test the length of the field and how it behaves in terms of responsivenes. and againthis is a longer comment to test the length of the field and how it behaves in terms of responsivenes. and again'),
-(3, 'Wolfgang Matyus', 'asdgabnavnasfdhadfhjadfhafdg'),
-(4, 'Wolfgang Matyus', 'ok das schaut schon mal besser aus');
+(4, 'Wolfgang Matyus', 'ok das schaut schon mal besser aus'),
+(8, 'Wolfgang Matyus', 'Hallo Welt!'),
+(9, 'Wolfgang Matyus', 'Es war wie immer wunderschÃ¶n, bei euch unterzutauchen!'),
+(12, 'Hotel Gast', 'hallo Welt!');
 
 --
 -- Indizes der exportierten Tabellen
@@ -62,7 +64,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT für Tabelle `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comments_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `comments_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
