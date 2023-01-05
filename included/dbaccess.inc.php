@@ -1,4 +1,4 @@
-<?php //php only ohne closing tag ? >
+<?php
 
 
 $serverName ="localhost";

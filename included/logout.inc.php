@@ -1,4 +1,4 @@
-<?php //php only ohne closing tag ? >
+<?php
 
 session_start();
 session_destroy();

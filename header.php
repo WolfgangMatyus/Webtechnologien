@@ -28,7 +28,7 @@
             <a class="navbar-brand col-md-2" href="index.php">
                 <?php
                     if(isset($_SESSION["username"]) && isset($_SESSION["thumb_path"])) {
-                        echo "Welcome <img src='included/" . $_SESSION['thumb_path'] . " '> " . $_SESSION["username"];
+                        echo "Welcome <img src='included/" . $_SESSION['thumb_path'] . "' style='width: 50px; height: 50px;'> " . $_SESSION["username"];
                     }
                     elseif (isset($_SESSION["useruid"])){
                     echo "Welcome " . $_SESSION["useruid"];
@@ -38,7 +38,7 @@
             </a>
             </figure>
             <hr class="headerline">
-                </h1>
+        </h1>
             <?php
                 include 'nav.php';
             ?>

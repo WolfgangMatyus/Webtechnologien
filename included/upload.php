@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) { // if save button on the form is clicked
     }
 
     // copying the part into thumbnail
-    $thumbSize = 25;
+    $thumbSize = 80;
     $thumb = imagecreatetruecolor($thumbSize, $thumbSize);
     imagecopyresampled($thumb, $myImage, 0, 0, $x, $y, $thumbSize, $thumbSize,$smallestSide,$smallestSide);
     

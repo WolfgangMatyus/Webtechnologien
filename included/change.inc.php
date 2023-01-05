@@ -1,4 +1,4 @@
-<?php //php only ohne closing tag ? >
+<?php
     session_start();
 
     require_once 'dbh.inc.php';

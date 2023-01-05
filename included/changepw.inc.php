@@ -1,4 +1,4 @@
-<?php //php only ohne closing tag ? >
+<?php
 
 if(isset($_POST["submit"])){
 

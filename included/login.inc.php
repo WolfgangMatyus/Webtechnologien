@@ -1,11 +1,11 @@
-<?php //php only ohne closing tag ? >
+<?php
 
 if(isset($_POST["submit"])){
 
     $username = htmlspecialchars($_POST["uid"]);
     $pwd = htmlspecialchars($_POST["pwd"]);
 
-    require_once 'dbh.inc.php';
+    require_once 'dbaccess.inc.php';
     require_once 'functions.inc.php';
 
     if(emptyInputLogin($username, $pwd) !== false){

@@ -1,7 +1,6 @@
-<?php //php only ohne closing tag ? >
+<?php 
 
 if(isset($_POST["submit"])){
-//    echo "It works";
 
     $arrival = htmlspecialchars($_POST["arrival"]);
     $departure = htmlspecialchars($_POST["departure"]);
@@ -9,7 +8,7 @@ if(isset($_POST["submit"])){
     $parking = htmlspecialchars($_POST["parking"]);
     $pet = htmlspecialchars($_POST["pet"]);
 
-    require_once 'dbh.inc.php';
+    require_once 'dbaccess.inc.php';
     require_once 'functions.inc.php';
 
     if (emptyInputReservation($arrival, $departure, $breakfast, $parking) !== false) {

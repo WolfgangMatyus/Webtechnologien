@@ -16,11 +16,26 @@
 
 <?php
     if(isset($_SESSION["useruid"])){
+
+        if($_SESSION["userAdmin"] == 1){
+            echo '
+            <div class="container d-flex">
+                <h4>Tools:</h4>
+            </div>
+            <div class="container d-flex">
+                <ul>
+                    <li><a href="usermanagement.php">User Management</a></li>
+                    <li><a href="reservationmanagement.php">Reservation Management</a></li>
+                    <li><a href="newspost.php">Post Newsfeed</a></li>
+                </ul>
+            </div>
+            ';
+        }
       echo '
-        <div class="container d-flex justify-content-center">
+        <div class="container d-flex ">
             <div class="card border-primary">
                 <div class="card-header bg-transparent border-primary">
-                    <h4>Upload your profile photo</h4>
+                    <h4>Upload your profile picture</h4>
                 </div>                
                 <div class="card-body">
                     <form action="included/upload.php" method="post" enctype="multipart/form-data">
@@ -37,8 +52,7 @@
             </div>
         </div>
       
-        <div class="container_1 d-flex" >
-            <div class="container justify-content-center">
+            <div class="container justify-content-center d-flex">
                 <div class="card border-primary ">
                     <div class="card-header bg-transparent border-primary">
                         <h5 class="card-title">Your current data</h5>
@@ -50,9 +64,9 @@
                             ?>    
                             <?php
                                     if(isset($_SESSION["username"]) && isset($_SESSION["thumb_path"])) {
-                                        echo " <img src='included/" . $_SESSION['thumb_path'] . " '> ";
+                                        echo " <img src='included/" . $_SESSION['thumb_path'] . "' style='width: 100px; height: 100px;'> ";
                                     }
-                                    else echo "<img src='Pics/Profilbilder/avatar.jpg' class='card-img-top-profile' alt='Profile Picture' style='width: 100px; height: 100px;'>";
+                                    else echo "<img src='Pics/Profilbilder/avatar.jpg' class='card-img-top-profile' alt='Profile Picture' style='width: 100px; height: 100px; border-radius: 25%'>";
                                     ?>
                                 <?php echo '
                             </div>
@@ -170,15 +184,14 @@
                     </div>
                 </div>
             </div>
-    </div>
     ';}
         }
             else echo 'Please log in for possible profile changes';
         ?>
-        <div class="container justify-content-center">
+        <div class="container justify-content-center col-4">
             <h5 class="">YOUR RESERVATIONs</h5>
             <?php
-                require_once 'included/dbh.inc.php';
+                require_once 'included/dbaccess.inc.php';
                 require_once 'included/functions.inc.php';
                 getReservations($conn, $_SESSION["useruid"])
             ?>

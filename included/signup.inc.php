@@ -1,7 +1,6 @@
-<?php //php only ohne closing tag ? >
+<?php
 
 if(isset($_POST["submit"])){
-//    echo "It works";
 
     $username = htmlspecialchars($_POST["uid"]);
     $name = htmlspecialchars($_POST["name"]);
@@ -10,7 +9,7 @@ if(isset($_POST["submit"])){
     $pwdRepeat = htmlspecialchars($_POST["pwdrepeat"]);
     $gender = htmlspecialchars($_POST["inlineRadioOptions"]);
 
-    require_once 'dbh.inc.php';
+    require_once 'dbaccess.inc.php';
     require_once 'functions.inc.php';
 
     if (emptyInputSignup($gender, $name, $email, $username, $pwd, $pwdRepeat) !== false) {

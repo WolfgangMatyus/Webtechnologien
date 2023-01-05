@@ -1,4 +1,4 @@
-<?php //php only ohne closing tag ? >
+<?php
 
 //use LDAP\Result;
 
@@ -215,7 +215,8 @@ return $result;
 }
 
 function loginUser($conn, $username, $pwd){
-    $uidExists = uidExists($conn, $username, $username); // doppelter Username wegen Email required in uidExists function. In diesem Fall ist es egal ob email "falsch" ist da SQL entweder oder prüft. <!--https://www.youtube.com/watch?v=gCo6JqGMi30 MIN 1:38-->
+    $uidExists = uidExists($conn, $username, $username); // doppelter Username wegen Email required in uidExists function. 
+                                                         // In diesem Fall ist es egal ob email "falsch" ist da SQL entweder oder prüft. <!--https://www.youtube.com/watch?v=gCo6JqGMi30 MIN 1:38-->
 
     if ($uidExists == false) {
         header("location: ../login.php?error=wronglogin");
@@ -236,6 +237,8 @@ function loginUser($conn, $username, $pwd){
         $_SESSION["useremail"] = $uidExists["usersEmail"];
         $_SESSION["username"] = $uidExists["usersName"];
         $_SESSION["usergender"] = $uidExists["usersGender"];
+        $_SESSION["userAdmin"] = $uidExists["usersAdmin"];
+        $_SESSION["userStatus"] = $uidExists["usersStatus"];
         
         header("location: ../index.php");
         exit();
