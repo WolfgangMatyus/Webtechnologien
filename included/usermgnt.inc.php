@@ -4,11 +4,7 @@ require_once 'dbaccess.inc.php';
 require_once 'functions.inc.php';
 
 $resultData = getAllUsers($conn);
-
-if ($resultData->num_rows > 0) {
-    // output data of each row
-    echo '<div class="usersTable d-flex justify-content-center"
-        <table>
+echo '
         <tr>
         <td>ID: </td>
         <td>Username: </td>
@@ -18,6 +14,8 @@ if ($resultData->num_rows > 0) {
         <td>Gender: </td>
         <td>Admin?: </td>
         <td>Status: </td>';
+if ($resultData->num_rows > 0) {
+    // output data of each row  
     while($row = $resultData->fetch_assoc()) {
         echo "<tr>
             <td>" . $row["usersId"]. " </td>
@@ -26,14 +24,11 @@ if ($resultData->num_rows > 0) {
             <td>" . $row["usersEmail"]. " </td>
             <td>" . $row["usersName"]. " </td>
             <td>" . $row["usersGender"]. " </td>
-            <td><form action='../indlude/change.inc.php' method='POST'><button type='submit' value='Edit' name='edit'></form></td>
-            " ?><?php if($row["usersAdmin"] == 0){echo'<td> NO </td>';}else{echo '<td> YES </td>';}; ?><?php "
-            " ?><?php if($row["usersStatus"] == 0){echo'<td> active </td>';}else{echo '<td> inactive </td>';}; ?><?php "
-            <td><form action='../indlude/change.inc.php' method='POST'><button type='submit' value='Edit' name='edit'></form></td>
+            " ?><?php if($row["usersAdmin"] == 0){echo'<td> NO <td>';}else{echo '<td> YES <td>';}; ?><?php "
+            " ?><?php if($row["usersStatus"] == 0){echo'active';}else{echo '<td> inactive <td>';}; ?><?php echo"   
+            <td><form action='../included/change.inc.php' method='POST'><button type='submit' value='" . $row["usersId"] . "' name='edit'>edit</button></form></td>
             <tr><br>";
-    }
-    echo '</table>
-        </div>';
+    };
 } else {
       echo "0 results";
 }

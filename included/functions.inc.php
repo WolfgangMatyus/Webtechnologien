@@ -245,7 +245,6 @@ function getAllUsers($conn){
 
     $resultData = mysqli_stmt_get_result($stmt);
     return $resultData;
-    
 }
 
 function falseDate($arrival, $departure){
