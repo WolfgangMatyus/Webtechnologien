@@ -145,7 +145,7 @@ function updateUser($conn, $gender, $name, $email, $username, $userid){
 }
 
 function changePW($conn, $username, $currentpwd, $newpwd, $confirmpwd){
-    $uidExists = uidExists($conn, $username, $username);
+    $userData = uidExists($conn, $username, $username);
     
     $sql ="SELECT usersPwd FROM users WHERE usersUid = ?;";
     $stmt = mysqli_stmt_init($conn);
@@ -156,7 +156,7 @@ function changePW($conn, $username, $currentpwd, $newpwd, $confirmpwd){
     mysqli_stmt_bind_param($stmt, "s", $username);
     mysqli_stmt_execute($stmt);
     
-    $pwdHashed = $uidExists["usersPwd"];
+    $pwdHashed = $userData["usersPwd"];
     $checkPwd = password_verify($currentpwd, $pwdHashed);
 
     if($checkPwd === false){
@@ -183,26 +183,6 @@ function changePW($conn, $username, $currentpwd, $newpwd, $confirmpwd){
     exit();
 }
 
-function getUser($conn, $username){
-    $uidExists = uidExists($conn, $username, $username);
-
-    $sql ="SELECT * FROM users WHERE usersUid = ?;";
-    $stmt = mysqli_stmt_init($conn);
-
-    mysqli_stmt_bind_param($stmt, "s", $username);
-    mysqli_stmt_execute($stmt);
-
-    $resultData = mysqli_stmt_get_result($stmt);
-
-    if($row = mysqli_fetch_assoc($resultData)){
-        return $row;
-    }
-    else {
-        $result = false;
-        return $result;
-    }
-}
-
 function emptyInputLogin($username, $pwd) {
 
     if(empty($username)|| empty($pwd)){
@@ -214,16 +194,26 @@ function emptyInputLogin($username, $pwd) {
 return $result;
 }
 
-function loginUser($conn, $username, $pwd){
-    $uidExists = uidExists($conn, $username, $username); // doppelter Username wegen Email required in uidExists function. 
-                                                         // In diesem Fall ist es egal ob email "falsch" ist da SQL entweder oder prüft. <!--https://www.youtube.com/watch?v=gCo6JqGMi30 MIN 1:38-->
+function initUser($userData){
+    session_start();
+    $_SESSION["userid"] = $userData["usersId"];
+    $_SESSION["useruid"] = $userData["usersUid"];
+    $_SESSION["useremail"] = $userData["usersEmail"];
+    $_SESSION["username"] = $userData["usersName"];
+    $_SESSION["usergender"] = $userData["usersGender"];
+    $_SESSION["userAdmin"] = $userData["usersAdmin"];
+    $_SESSION["userStatus"] = $userData["usersStatus"];
+}
 
-    if ($uidExists == false) {
+function loginUser($conn, $username, $pwd){
+    $userData = uidExists($conn, $username, $username); // doppelter Username wegen Email required in uidExists function. 
+                                                         // In diesem Fall ist es egal ob email "falsch" ist da SQL entweder oder prüft. <!--https://www.youtube.com/watch?v=gCo6JqGMi30 MIN 1:38-->
+    if ($userData == false) {
         header("location: ../login.php?error=wronglogin");
         exit();
     }
 
-    $pwdHashed = $uidExists["usersPwd"];
+    $pwdHashed = $userData["usersPwd"];
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if($checkPwd === false){
@@ -231,26 +221,42 @@ function loginUser($conn, $username, $pwd){
         exit();
     }
     else if ($checkPwd === true){
-        session_start();
-        $_SESSION["userid"] = $uidExists["usersId"];
-        $_SESSION["useruid"] = $uidExists["usersUid"];
-        $_SESSION["useremail"] = $uidExists["usersEmail"];
-        $_SESSION["username"] = $uidExists["usersName"];
-        $_SESSION["usergender"] = $uidExists["usersGender"];
-        $_SESSION["userAdmin"] = $uidExists["usersAdmin"];
-        $_SESSION["userStatus"] = $uidExists["usersStatus"];
+        initUser($userData);
         
         header("location: ../index.php");
         exit();
     }
 }
 
+function getUser($conn, $username){
+    $userData = uidExists($conn, $username, $username);
+    initUser($userData);
+}
+
+function getAllUsers($conn){
+    $sql ="SELECT * FROM users";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../signup.php?error=stmt1failed");
+        exit();
+    }
+
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+    return $resultData;
+    
+}
+
 function falseDate($arrival, $departure){
-        if($arrival < $departure){
+        if($arrival < $departure){ 
             $result = false;
         }
-        else{
+        elseif($departure < date("Y/m/d")){ // current date
             $result = true;
+        }
+        else{
+
         }
     return $result;
 }
@@ -274,11 +280,7 @@ function setComment($conn, $username, $comment){
 function getComments($conn){
     $sql = "SELECT *  FROM comments ORDER BY id desc";
     $stmt = mysqli_stmt_init($conn);
-    /*if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../guestbook.php?error=stmt1failed");
-        exit();
-    }*/
-    mysqli_stmt_execute($stmt);
+        mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     return $result;
     $conn = null;
@@ -316,13 +318,13 @@ function getReservations($conn, $username){
           echo "
          
             <tr class='resTable'>
-                <td>".$row["reservationsUid"]."</td>
-                <td>" . $row["reservationsArrival"]."</td>
-                <td>" . $row["reservationsDeparture"]."</td>
-                <td>" . $row["reservationsBreakfast"]."</td>
-                <td>" . $row["reservationsParking"]."</td>
-                <td>". $row["reservationsPet"]."</td>
-                <td>" . $row["reservationsStatus"]."</td>
+                <td>" . $row["reservationsUid"] . "</td>
+                <td>" . $row["reservationsArrival"] . "</td>
+                <td>" . $row["reservationsDeparture"] . "</td>
+                <td>" . $row["reservationsBreakfast"] . "</td>
+                <td>" . $row["reservationsParking"] . "</td>
+                <td>" . $row["reservationsPet"] . "</td>
+                <td>" . $row["reservationsStatus"] . "</td>
                 <td>
                     <form action='/included/reservation.inc.php' method='POST'>
                         <button type='submit' name='cancelRes' value='$reservervationId'>Yes, please!</button>

@@ -5,7 +5,7 @@
     <div class="container">
             <div class="row justify-content-between">
                 <div class="col-4">
-                    <h1>Reservationmanagement</h1>
+                    <h1>Reservation Management</h1>
                 </div>
                 <div class="col-4">
                     <img src="Pics/Aquakino.jpg" class="rounded float-end" alt="Dive In!" width="100" height="100">
@@ -14,7 +14,14 @@
             </div>
         </div>
 
-
+        <div class="container justify-content-center col-4">
+            <h5 class="">YOUR RESERVATIONs</h5>
+            <?php
+                require_once 'included/dbaccess.inc.php';
+                require_once 'included/functions.inc.php';
+                getReservations($conn, $_SESSION["useruid"])
+            ?>
+        </div>
     
 </div>
 <?php

@@ -24,8 +24,8 @@
             </div>
             <div class="container d-flex">
                 <ul>
-                    <li><a href="usermanagement.php">User Management</a></li>
-                    <li><a href="reservationmanagement.php">Reservation Management</a></li>
+                    <li><a href="usermgnt.php">User Management</a></li>
+                    <li><a href="reservationmgnt.php">Reservation Management</a></li>
                     <li><a href="newspost.php">Post Newsfeed</a></li>
                 </ul>
             </div>
@@ -38,7 +38,7 @@
                     <h4>Upload your profile picture</h4>
                 </div>                
                 <div class="card-body">
-                    <form action="included/upload.php" method="post" enctype="multipart/form-data">
+                    <form action="included/upload.inc.php" method="post" enctype="multipart/form-data">
                         Select image to upload: <br>
                         <div>
                           <input type="file" name="myfile" id="fileToUpload">

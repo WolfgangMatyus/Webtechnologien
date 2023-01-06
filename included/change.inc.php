@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once 'dbh.inc.php';
+    require_once 'dbaccess.inc.php';
     require_once 'functions.inc.php';
 
 if(isset($_POST["change"])){
@@ -31,4 +31,4 @@ else if(isset($_POST["submitchange"])){
     updateUser($conn, $gender, $name, $email, $username, $userid);
 
 }
-else echo "da woan ma ned hin";
+else echo "ERROR";
