@@ -26,8 +26,10 @@ if ($resultData->num_rows > 0) {
             <td>" . $row["usersEmail"]. " </td>
             <td>" . $row["usersName"]. " </td>
             <td>" . $row["usersGender"]. " </td>
+            <td><form action='../indlude/change.inc.php' method='POST'><button type='submit' value='Edit' name='edit'></form></td>
             " ?><?php if($row["usersAdmin"] == 0){echo'<td> NO </td>';}else{echo '<td> YES </td>';}; ?><?php "
-            <td>" ?><?php if($row["usersStatus"] == 0){echo'<td> active </td>';}else{echo '<td> inactive </td>';}; ?><?php "
+            " ?><?php if($row["usersStatus"] == 0){echo'<td> active </td>';}else{echo '<td> inactive </td>';}; ?><?php "
+            <td><form action='../indlude/change.inc.php' method='POST'><button type='submit' value='Edit' name='edit'></form></td>
             <tr><br>";
     }
     echo '</table>
