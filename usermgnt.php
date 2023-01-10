@@ -39,30 +39,48 @@
 
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Other">
-                                    <label class="form-check-label" for="inlineRadio2">Other</label>
+                                    <label class="form-check-label" for="inlineRadio3">Other</label>
                                 </div>
 
-                                <div class="input-group flex-nowrap">
-                                    <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
+                                <div class="mb-3">
                                     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="uid">
                                 </div>
 
-                                <div class="input-group flex-nowrap">
-                                    <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
+                                <div class="mb-3">
                                     <input type="text" class="form-control" placeholder="Full Name" aria-label="Username" aria-describedby="addon-wrapping" name="name">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                                    <label for="InputEmail" class="form-label">Email address:</label>
+                                    <input type="email" class="form-control" placeholder="User@domain.cc" id="InputEmail" aria-describedby="emailHelp" name="email">
                                 </div>
+
+                                <div class="mb-3">
+                                Adminrechte
+                                    <label class="switch">
+                                        <input type="checkbox"'
+                                        ?><?php if($_SESSION['userAdmin'] == 1){echo "checked value='1'";}else{echo "value='0'";}  ?><?php echo '
+                                        name="useradmin" id="switch" onclick="switchAdmin()">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
+                                <div class="mb-3">
+                                User Status
+                                    <label class="switch">
+                                        <input type="checkbox"'
+                                        ?><?php if($_SESSION['userStatus'] == 1){echo "checked value='1'";}else{echo "value='0'";}  ?><?php echo '
+                                        name="userstatus" id="switch" onclick="switchJs()">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
                                 <div class="row btn-lg">
                                     <div class="col btn-lg">
                                         <div class="btn btn-primary btn-lg">
                                             <button type="submit" class="btn btn-primary" name="submitedit">Change Data</button>
                                         </div>
-                                    </div>        
-                                
+                                    </div>
                             </form>
                                     <div class="col btn-lg">    
                                         <form action="../changepw.php" method="POST">
