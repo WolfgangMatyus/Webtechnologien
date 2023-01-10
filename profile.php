@@ -135,35 +135,35 @@
                     </div>
                     <div class="card-body">
                         <form action="/included/change.inc.php" method="POST">
-
+                            <div>
+                                <h6>*Gender:</h6>
+                            </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
-                                <label class="form-check-label" for="inlineRadio1">Male*</label>
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
                             </div>
 
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Female">
-                                <label class="form-check-label" for="inlineRadio2">Female*</label>
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
                             </div>
 
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Other">
-                                <label class="form-check-label" for="inlineRadio2">Other*</label>
+                                <label class="form-check-label" for="inlineRadio3">Other</label>
                             </div>
 
-                            <div class="input-group flex-nowrap">
-                                <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
+                            <div class="mb-3">
                                 <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="uid">
                             </div>
 
-                            <div class="input-group flex-nowrap">
-                                <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
+                            <div class="mb-3">
                                 <input type="text" class="form-control" placeholder="Full Name" aria-label="Username" aria-describedby="addon-wrapping" name="name">
                             </div>
 
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" placeholder="User@domain.cc" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                                <label for="InputEmail" class="form-label">Email address:</label>
+                                <input type="email" class="form-control" placeholder="User@domain.cc" id="InputEmail" aria-describedby="emailHelp" name="email">
                             </div>
                             <div class="row btn-lg">
                                 <div class="col btn-lg">

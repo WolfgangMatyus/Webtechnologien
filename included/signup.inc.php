@@ -8,7 +8,7 @@ if(isset($_POST["submit"])){
     $pwd = htmlspecialchars($_POST["pwd"]);
     $pwdRepeat = htmlspecialchars($_POST["pwdrepeat"]);
     $gender = htmlspecialchars($_POST["inlineRadioOptions"]);
-
+    $userstatus = 1;
     require_once 'dbaccess.inc.php';
     require_once 'functions.inc.php';
 
@@ -44,7 +44,7 @@ if(isset($_POST["submit"])){
     }
     */
 
-    createUser($conn, $gender, $name, $email, $username, $pwd);
+    createUser($conn, $gender, $name, $email, $username, $pwd, $userstatus);
 
 }
 else{

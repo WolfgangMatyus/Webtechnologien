@@ -13,7 +13,7 @@ else if(isset($_POST["submitchange"])){
 
     if(isset($_POST["inlineRadioOptions"])){
         $gender = $_POST["inlineRadioOptions"];
-    }else{$gender = $_SESSION["gender"];}
+    }else{$gender = $_SESSION["usergender"];}
 
     if(isset($_POST["uid"])){
         $username = $_POST["uid"];
@@ -21,15 +21,17 @@ else if(isset($_POST["submitchange"])){
 
     if(isset($_POST["name"])){
         $name = $_POST["name"];
-    }else{$name = $_SESSION["usersname"];}
+    }else{$name = $_SESSION["username"];}
 
     if(isset($_POST["email"])){
         $email = $_POST["email"];
-    }else{$email = $_SESSION["usersemail"];}
-   
-    $userid = $_SESSION["userid"];
+    }else{$email = $_SESSION["useremail"];}
     
-    updateUser($conn, $gender, $name, $email, $username, $userid);
+    $userid = $_SESSION["userid"];
+    $useradmin = $_SESSION["userAdmin"];
+    $userstatus = $_SESSION["userStatus"];
+
+    updateUser($conn, $gender, $name, $email, $username, $useradmin, $userstatus, $userid);
 }
 else echo "ERROR";
 
@@ -40,26 +42,34 @@ if(isset($_POST["edit"])){
 }
 
 else if(isset($_POST["submitedit"])){
-
-    if(isset($_POST["inlineRadioOptions"])){
+    $userid = $_SESSION["editUserID"];
+    getUserById($conn, $userId);
+    
+    if(!empty($_POST["inlineRadioOptions"])){
         $gender = $_POST["inlineRadioOptions"];
-    }else{$gender = $_SESSION["gender"];}
+    }else{$gender = $_SESSION["usergender"];}
 
-    if(isset($_POST["uid"]) && $_POST["uid"] != ""){
+    if(!empty($_POST["uid"])){
         $username = $_POST["uid"];
     }else{$username = $_SESSION["useruid"];}
 
-    if(isset($_POST["name"]) && $_POST["name"] != ""){
+    if(!empty($_POST["name"])){
         $name = $_POST["name"];
-    }else{$name = $_SESSION["usersname"];}
+    }else{$name = $_SESSION["username"];}
 
-    if(isset($_POST["email"]) && $_POST["email"] != ""){
+    if(!empty($_POST["email"])){
         $email = $_POST["email"];
-    }else{$email = $_SESSION["usersemail"];}
-   
-    $userid = $_SESSION["editUserID"];
+    }else{$email = $_SESSION["useremail"];}
     
-    updateUser($conn, $gender, $name, $email, $username, $userid);
+    if(isset($_POST["useradmin"])){
+        $useradmin = $_POST["useradmin"];
+    }else{$useradmin = $_SESSION["userAdmin"];}
+
+    if(isset($_POST["userstatus"])){
+        $userstatus = $_POST["userstatus"];
+    }else{$userstatus = $_SESSION["userStatus"];}   
+
+    updateUser($conn, $gender, $name, $email, $username, $useradmin, $userstatus, $userid);
 
 }
 else echo "ERROR";

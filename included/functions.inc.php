@@ -90,8 +90,8 @@ function uidExists($conn, $username, $email){
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $gender, $name, $email, $username, $pwd){
-    $sql ="INSERT INTO users (usersGender, usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?, ?);";
+function createUser($conn, $gender, $name, $email, $username, $pwd, $userstatus){
+    $sql ="INSERT INTO users (usersGender, usersName, usersEmail, usersUid, usersPwd, usersStatus) VALUES (?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../signup.php?error=stmt2failed");
@@ -100,7 +100,7 @@ function createUser($conn, $gender, $name, $email, $username, $pwd){
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sssss", $gender, $name, $email, $username, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "sssss", $gender, $name, $email, $username, $hashedPwd, $userstatus);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
         header("location: ../login.php?error=none");
@@ -124,14 +124,14 @@ function createReservation($conn, $arrival, $departure, $breakfast, $parking, $p
     exit();
 }
 
-function updateUser($conn, $gender, $name, $email, $username, $userid){
-    $sql ="UPDATE users SET usersGender = ?, usersName = ?, usersEmail = ?, usersUid = ? WHERE usersId = ?";
+function updateUser($conn, $gender, $name, $email, $username, $useradmin, $userstatus, $userid){
+    $sql ="UPDATE users SET usersGender = ?, usersName = ?, usersEmail = ?, usersUid = ?, usersAdmin = ?, usersStatus = ? WHERE usersId = ?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../profile.php?error=stmt2failed");
         exit();
     }
-    mysqli_stmt_bind_param($stmt, "sssss", $gender, $name, $email, $username, $userid);
+    mysqli_stmt_bind_param($stmt, "sssssss", $gender, $name, $email, $username, $useradmin, $userstatus, $userid);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
@@ -141,7 +141,6 @@ function updateUser($conn, $gender, $name, $email, $username, $userid){
     $_SESSION["username"] = $name;
         header("location: ../profile.php?error=none1");
         exit();
-    exit();
 }
 
 function changePW($conn, $username, $currentpwd, $newpwd, $confirmpwd){
@@ -230,6 +229,29 @@ function loginUser($conn, $username, $pwd){
 
 function getUser($conn, $username){
     $userData = uidExists($conn, $username, $username);
+    initUser($userData);
+}
+
+function getUserById($conn, $userId){
+    $sql ="SELECT * FROM users Where usersId = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../signup.php?error=stmt1failed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $userId);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+    if($userData = mysqli_fetch_assoc($resultData)){
+        return $userData;
+    }
+    else {
+        $result = false;
+        return $result;
+    }
+    
     initUser($userData);
 }
 
