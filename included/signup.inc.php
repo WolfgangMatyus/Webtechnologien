@@ -9,6 +9,7 @@ if(isset($_POST["submit"])){
     $pwdRepeat = htmlspecialchars($_POST["pwdrepeat"]);
     $gender = htmlspecialchars($_POST["inlineRadioOptions"]);
     $userstatus = 1;
+    
     require_once 'dbaccess.inc.php';
     require_once 'functions.inc.php';
 

@@ -37,6 +37,7 @@ else echo "ERROR";
 
 if(isset($_POST["edit"])){
     $_SESSION["editUserID"] = $_POST["edit"];
+    getUserById($conn, $userId);
     header("location: ../usermgnt.php?error=none");
         exit();
 }

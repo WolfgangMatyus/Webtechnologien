@@ -100,7 +100,7 @@ function createUser($conn, $gender, $name, $email, $username, $pwd, $userstatus)
 
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sssss", $gender, $name, $email, $username, $hashedPwd, $userstatus);
+    mysqli_stmt_bind_param($stmt, "ssssss", $gender, $name, $email, $username, $hashedPwd, $userstatus);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
         header("location: ../login.php?error=none");

@@ -24,8 +24,8 @@ if ($resultData->num_rows > 0) {
             <td>" . $row["usersEmail"]. " </td>
             <td>" . $row["usersName"]. " </td>
             <td>" . $row["usersGender"]. " </td>
-            " ?><?php if($row["usersAdmin"] == 0){echo'<td> NO <td>';}else{echo '<td> YES <td>';}; ?><?php "
-            " ?><?php if($row["usersStatus"] == 1){echo'active';}else{echo '<td> inactive <td>';}; ?><?php echo"   
+            " ?><?php if($row["usersAdmin"] == 0){echo'<td> NO </td>';}else{echo '<td> YES </td>';}; ?><?php "
+            " ?><?php if($row["usersStatus"] == 1){echo'<td> active </td>';}else{echo '<td> inactive </td>';}; ?><?php echo"   
             <td><form action='../included/change.inc.php' method='POST'><button type='submit' value='" . $row["usersId"] . "' name='edit'>edit</button></form></td>
             <tr>";
     };

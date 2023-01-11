@@ -60,7 +60,7 @@
                                     <label class="switch">
                                         <input type="checkbox"'
                                         ?><?php if($_SESSION['userAdmin'] == 1){echo "checked value='1'";}else{echo "value='0'";}  ?><?php echo '
-                                        name="useradmin" id="switch" onclick="switchAdmin()">
+                                        name="useradmin" id="switch">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
