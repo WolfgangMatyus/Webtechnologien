@@ -54,7 +54,7 @@
                                     <label for="InputEmail" class="form-label">Email address:</label>
                                     <input type="email" class="form-control" placeholder="User@domain.cc" id="InputEmail" aria-describedby="emailHelp" name="email">
                                 </div>
-
+                                
                                 <div class="mb-3">
                                 Adminrechte
                                     <label class="switch">
